@@ -92,17 +92,6 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <div className="relative mb-8">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden liquid-glass border border-white/10"
-          >
-            <img src={nanoBananaImg} alt="Nano Banana" className="w-full h-full object-cover" />
-          </motion.div>
-          <div className="absolute -inset-4 bg-primary/10 blur-2xl rounded-full -z-10 animate-pulse" />
-        </div>
 
         <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-foreground leading-[0.8] max-w-3xl tracking-[-4px] mb-8">
           <BlurText text={t("hero.title")} delay={100} />
