@@ -44,7 +44,7 @@ export function CtaFooter() {
         </div>
 
         <footer className="w-full pt-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-foreground/40 text-xs font-body">© 2026 Noxis. Ingénierie depuis 2014.</p>
+          <p className="text-foreground/40 text-xs font-body">© 2026 Noxis. Ingénierie depuis 2022.</p>
           <div className="flex items-center gap-6">
             {["Services", "Réalisations", "Carrières", "Contact"].map((l) => (
               <a key={l} href="#" className="text-foreground/40 text-xs font-body hover:text-foreground transition">

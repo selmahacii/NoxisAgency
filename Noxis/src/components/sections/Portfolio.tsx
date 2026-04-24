@@ -53,7 +53,8 @@ import meeyNailshopG6 from "@/assets/MeeyNailshop/image copy 6.png";
 import meeyNailshopG7 from "@/assets/MeeyNailshop/image copy 7.png";
 import meeyNailshopG8 from "@/assets/MeeyNailshop/image copy 8.png";
 
-import furniSpaceVideo from "@/assets/FurniSpace/FurniSpace (2).mp4";
+import furniSpaceVideo from "@/assets/FurniSpace/FurniSpace.mp4";
+import furniSpaceImg from "@/assets/FurniSpace/image.png";
 
 import fiscAlgerieImg from "@/assets/FiscAlgerie/image.png";
 import fiscAlgerieG1 from "@/assets/FiscAlgerie/image copy.png";
@@ -193,7 +194,7 @@ export const projects: Project[] = [
     year: "2024",
     client: "FurniSpace Global",
     duration: "12 semaines",
-    image: "", // Video will be used as primary
+    image: furniSpaceImg,
     video: furniSpaceVideo,
     summary: "Plateforme immersive de vente de mobilier avec rendu haute fidélité.",
     challenge: "Créer une expérience d'achat immersive pour du mobilier haut de gamme avec visualisation spatiale et fluidité extrême.",
