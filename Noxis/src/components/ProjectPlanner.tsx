@@ -50,9 +50,9 @@ const serviceOptions = [
 ];
 
 const budgetOptions = [
-  { id: "starter", label: "5k - 15k DZD", desc: "MVP ou projet ciblé" },
-  { id: "growth", label: "15k - 50k DZD", desc: "Produit complet" },
-  { id: "enterprise", label: "50k+ DZD", desc: "Écosystème complexe" },
+  { id: "starter", label: "3M - 5M DZD", desc: "MVP ou projet ciblé" },
+  { id: "growth", label: "5M - 20M DZD", desc: "Produit complet" },
+  { id: "enterprise", label: "20M+ DZD", desc: "Écosystème complexe" },
 ];
 
 const timelineOptions = [
