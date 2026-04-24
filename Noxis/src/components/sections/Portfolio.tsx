@@ -11,13 +11,13 @@ import kahootG3 from "@/assets/Kahoot/image copy 3.png";
 import kahootG4 from "@/assets/Kahoot/image copy 4.png";
 import kahootG5 from "@/assets/Kahoot/image copy 5.png";
 
-import moistleafVideo from "@/assets/Moistleaf/Screen Video (19).mp4";
+import moistleafVideo from "@/assets/Moistleaf/Moistleaf.mp4";
 import moistleafImg from "@/assets/Moistleaf/image.png";
 import moistleafG1 from "@/assets/Moistleaf/image copy.png";
 import moistleafG2 from "@/assets/Moistleaf/image copy 2.png";
 import moistleafG3 from "@/assets/Moistleaf/image copy 3.png";
 
-import maisonOrelieVideo from "@/assets/MaisonOrélie/Screen Video (22).mp4";
+import maisonOrelieVideo from "@/assets/MaisonOrélie/MaisonOrelie.mp4";
 import maisonOrelieImg from "@/assets/MaisonOrélie/image.png";
 import maisonOrelieG1 from "@/assets/MaisonOrélie/image copy.png";
 import maisonOrelieG2 from "@/assets/MaisonOrélie/image copy 2.png";
@@ -35,14 +35,14 @@ import noraFurnitureG6 from "@/assets/NoraFurniture/image copy 6.png";
 
 
 
-import elMalikaVideo from "@/assets/Elmalika/Screen Video (26).mp4";
+import elMalikaVideo from "@/assets/Elmalika/Elmalika.mp4";
 import elMalikaImg from "@/assets/Elmalika/image.png";
 import elMalikaG1 from "@/assets/Elmalika/image copy.png";
 import elMalikaG2 from "@/assets/Elmalika/image copy 2.png";
 import elMalikaG3 from "@/assets/Elmalika/image copy 3.png";
 import elMalikaG4 from "@/assets/Elmalika/image copy 4.png";
 
-import meeyNailshopVideo from "@/assets/MeeyNailshop/Screen Video (27).mp4";
+import meeyNailshopVideo from "@/assets/MeeyNailshop/MeeyNailshop.mp4";
 import meeyNailshopImg from "@/assets/MeeyNailshop/image.png";
 import meeyNailshopG1 from "@/assets/MeeyNailshop/image copy.png";
 import meeyNailshopG2 from "@/assets/MeeyNailshop/image copy 2.png";
