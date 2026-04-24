@@ -60,6 +60,8 @@ import fiscAlgerieImg from "@/assets/FiscAlgerie/image.png";
 import fiscAlgerieG1 from "@/assets/FiscAlgerie/image copy.png";
 import fiscAlgerieG2 from "@/assets/FiscAlgerie/image copy 2.png";
 
+import earioImg from "@/assets/earo/image.png";
+
 
 
 export interface Project {
@@ -225,6 +227,26 @@ export const projects: Project[] = [
       { label: "Précision", value: "100%" },
       { label: "Gain Temps", value: "x4" },
       { label: "Utilisateurs", value: "500+" },
+    ],
+    onlyWorkPage: true,
+  },
+  {
+    id: "eario",
+    title: "Eario.ai",
+    category: "SaaS — ERP & CRM Intelligent",
+    year: "2025",
+    client: "Eario.ai",
+    duration: "16 semaines",
+    image: earioImg,
+    summary: "Plateforme unifiée de gestion d’entreprise remplaçant la fragmentation des outils par un système intelligent centralisé.",
+    challenge: "Supprimer la complexité des outils déconnectés (CRM, ERP, finance) en créant un hub opérationnel unique où chaque donnée circule en temps réel.",
+    description: "Eario.ai est structuré autour de 5 piliers : Sales Pipeline, Clients, Invoices, Inventory et Finance, avec une couche d'IA (Insights) pour les prévisions et recommandations business. La plateforme transforme les données brutes en actions concrètes.",
+    services: ["Architecture SaaS", "Design UI/UX", "Intelligence Artificielle", "Gestion de Données"],
+    stack: ["Next.js", "Python (AI)", "PostgreSQL", "Tailwind CSS"],
+    results: [
+      { label: "Productivité", value: "+40%" },
+      { label: "Visibilité", value: "Temps Réel" },
+      { label: "Décisions", value: "IA Assistée" },
     ],
     onlyWorkPage: true,
   },
