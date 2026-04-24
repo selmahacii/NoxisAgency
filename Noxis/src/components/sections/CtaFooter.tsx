@@ -1,4 +1,5 @@
 import cinematicVideo from "@/assets/z.mp4";
+import { Link } from "@tanstack/react-router";
 
 export function CtaFooter() {
   return (
@@ -34,12 +35,12 @@ export function CtaFooter() {
           >
             Réserver un appel découverte
           </a>
-          <a
-            href="#"
+          <Link
+            to="/work"
             className="bg-primary text-primary-foreground rounded-full px-6 py-3 inline-flex items-center gap-2 text-sm font-medium hover:bg-primary/90 transition"
           >
             Voir les réalisations
-          </a>
+          </Link>
         </div>
 
         <footer className="w-full pt-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">

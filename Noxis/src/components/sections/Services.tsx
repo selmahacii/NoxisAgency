@@ -28,11 +28,7 @@ const services: { icon?: LucideIcon; title: string; body: string; image?: string
     title: "Tableaux de Bord de Données",
     body: "Interfaces analytiques personnalisées, intégrations BI (Tableau, Power BI) et visualisation de données en temps réel.",
   },
-  {
-    image: bananaImg,
-    title: "Banana Labs — Special Projects",
-    body: "Des initiatives expérimentales alliant design d'avant-garde et technologies émergentes pour des marques audacieuses.",
-  },
+  
 ];
 
 export function Services() {
