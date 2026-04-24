@@ -123,12 +123,12 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.1 }}
           className="flex items-center gap-5"
         >
-          <a
-            href="#"
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-planner"))}
             className="liquid-glass-strong rounded-full px-5 py-2.5 inline-flex items-center gap-2 text-sm font-medium text-foreground"
           >
             {t("hero.cta1")} <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </button>
           <a
             href="#"
             className="inline-flex items-center gap-2 text-sm font-medium text-foreground/80"

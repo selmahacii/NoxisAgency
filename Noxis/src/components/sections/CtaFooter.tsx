@@ -29,12 +29,12 @@ export function CtaFooter() {
           Parlez-nous de votre produit, plateforme ou idée. Nous reviendrons vers vous sous 24h avec une vision claire — périmètre, équipe et délais.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mb-32">
-          <a
-            href="tel:+213780125700"
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-planner"))}
             className="liquid-glass-strong rounded-full px-6 py-3 inline-flex items-center gap-2 text-sm font-medium text-foreground"
           >
             Réserver un appel découverte
-          </a>
+          </button>
           <Link
             to="/work"
             className="bg-primary text-primary-foreground rounded-full px-6 py-3 inline-flex items-center gap-2 text-sm font-medium hover:bg-primary/90 transition"

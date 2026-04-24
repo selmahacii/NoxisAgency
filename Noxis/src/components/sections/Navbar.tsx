@@ -43,6 +43,12 @@ export function Navbar() {
             <Globe className="h-3.5 w-3.5" />
             {lang === "fr" ? "AR" : "FR"}
           </button>
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-planner"))}
+            className="ml-1 inline-flex items-center gap-1 liquid-glass rounded-full px-3.5 py-1.5 text-sm font-medium text-foreground hover:bg-foreground/5 transition"
+          >
+            {t("nav.quote")}
+          </button>
           <Link
             to="/contact"
             className="ml-1 inline-flex items-center gap-1 bg-primary text-primary-foreground rounded-full px-3.5 py-1.5 text-sm font-medium hover:bg-primary/90 transition"
@@ -82,6 +88,15 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <button
+              onClick={() => {
+                setOpen(false);
+                window.dispatchEvent(new CustomEvent("open-planner"));
+              }}
+              className="mt-4 bg-primary text-primary-foreground rounded-full px-6 py-3 text-base font-medium font-body"
+            >
+              {t("nav.quote")}
+            </button>
             <button
               onClick={() => setLang(lang === "fr" ? "ar" : "fr")}
               className="mt-4 liquid-glass rounded-full px-4 py-2 text-sm text-foreground font-body inline-flex items-center gap-2"

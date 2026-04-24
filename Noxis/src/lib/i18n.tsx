@@ -12,6 +12,7 @@ const dictionaries: Record<Lang, Dict> = {
     "nav.process": "Process",
     "nav.contact": "Contact",
     "nav.cta": "Démarrer",
+    "nav.quote": "Obtenir un devis",
 
     "hero.badge": "What we do",
     "hero.title": "Services built for ambitious teams.",
@@ -42,6 +43,7 @@ const dictionaries: Record<Lang, Dict> = {
     "nav.process": "منهجيتنا",
     "nav.contact": "تواصل",
     "nav.cta": "ابدأ الآن",
+    "nav.quote": "طلب تسعيرة",
 
     "hero.badge": "وكالة تقنية تبني المستقبل.",
     "hero.title": "نبني برمجيات تدفع علاماتك التجارية إلى الأمام",

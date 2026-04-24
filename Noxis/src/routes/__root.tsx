@@ -1,5 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { I18nProvider } from "@/lib/i18n";
+import { ProjectPlanner } from "@/components/ProjectPlanner";
+import { useState, useEffect } from "react";
 
 import appCss from "../styles.css?url";
 
@@ -66,9 +68,18 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+  const [isPlannerOpen, setIsPlannerOpen] = useState(false);
+
+  useEffect(() => {
+    const handleToggle = () => setIsPlannerOpen(true);
+    window.addEventListener("open-planner", handleToggle);
+    return () => window.removeEventListener("open-planner", handleToggle);
+  }, []);
+
   return (
     <I18nProvider>
       <Outlet />
+      <ProjectPlanner isOpen={isPlannerOpen} onClose={() => setIsPlannerOpen(false)} />
     </I18nProvider>
   );
 }
