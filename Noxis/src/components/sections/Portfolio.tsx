@@ -521,13 +521,13 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                     {/* Stats Grid */}
                     <div className="space-y-4">
                       <h4 className="text-sm uppercase tracking-widest text-foreground/40 font-body">Résultats</h4>
-                      <div className="grid grid-cols-1 gap-3">
+                      <div className="space-y-6">
                         {active.results.map((r) => (
-                          <div key={r.label} className="liquid-glass rounded-2xl p-5 border border-foreground/5 hover:border-primary/20 transition-colors">
-                            <div className="text-3xl font-heading italic text-foreground leading-none mb-1">
+                          <div key={r.label} className="border-b border-foreground/10 pb-4 last:border-0 transition-colors">
+                            <div className="text-4xl font-heading italic text-foreground leading-none mb-2">
                               {r.value}
                             </div>
-                            <div className="text-foreground/50 font-body font-light text-xs uppercase tracking-wider">{r.label}</div>
+                            <div className="text-foreground/40 font-body font-light text-[10px] uppercase tracking-[0.2em]">{r.label}</div>
                           </div>
                         ))}
                       </div>
