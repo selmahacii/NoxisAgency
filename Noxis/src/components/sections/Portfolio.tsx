@@ -340,10 +340,12 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                 {p.video ? (
                   <video
                     src={p.video}
+                    poster={p.image}
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
@@ -403,10 +405,12 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                 {active.video ? (
                   <video
                     src={active.video}
+                    poster={active.image}
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-cover"
                   />
                 ) : (
