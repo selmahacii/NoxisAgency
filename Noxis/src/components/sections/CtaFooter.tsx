@@ -1,4 +1,4 @@
-import cinematicVideo from "@/assets/a_generate_Cinematic_.mp4";
+import cinematicVideo from "@/assets/z.mp4";
 
 export function CtaFooter() {
   return (

@@ -33,9 +33,7 @@ import noraFurnitureG4 from "@/assets/NoraFurniture/image copy 4.png";
 import noraFurnitureG5 from "@/assets/NoraFurniture/image copy 5.png";
 import noraFurnitureG6 from "@/assets/NoraFurniture/image copy 6.png";
 
-import earthVideo from "@/assets/a_generate_a_3D_earth_.mp4";
-import cinematicVideo1 from "@/assets/a_generate_Cinematic_.mp4";
-import cinematicVideo2 from "@/assets/b_generate_Cinematic_.mp4";
+
 
 import elMalikaVideo from "@/assets/Elmalika/Screen Video (26).mp4";
 import elMalikaImg from "@/assets/Elmalika/image.png";
