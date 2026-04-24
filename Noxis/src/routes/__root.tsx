@@ -4,6 +4,7 @@ import { ProjectPlanner } from "@/components/ProjectPlanner";
 import { useState, useEffect } from "react";
 
 import appCss from "../styles.css?url";
+import logoIcon from "@/assets/noxis-logo.png";
 
 function NotFoundComponent() {
   return (
@@ -45,6 +46,10 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "icon",
+        href: logoIcon,
       },
     ],
   }),
