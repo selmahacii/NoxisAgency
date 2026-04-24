@@ -13,10 +13,10 @@ const dictionaries: Record<Lang, Dict> = {
     "nav.contact": "Contact",
     "nav.cta": "Démarrer",
 
-    "hero.badge": "Une agence tech qui construit ce qui vient ensuite.",
-    "hero.title": "Nous construisons des logiciels qui propulsent les marques",
+    "hero.badge": "What we do",
+    "hero.title": "Services built for ambitious teams.",
     "hero.subtitle":
-      "Sites, web apps, mobile et plateformes sur-mesure. Stratégie, design et ingénierie sous un seul toit — livrés à la vitesse dont votre business a réellement besoin.",
+      "Every engagement combines strategy, design, and engineering — so your roadmap never waits on a handoff.",
     "hero.cta1": "Lancer un projet",
     "hero.cta2": "Voir le showreel",
     "hero.partners": "Ils nous font confiance",

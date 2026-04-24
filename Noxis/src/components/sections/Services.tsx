@@ -1,6 +1,8 @@
 import { ArrowUpRight, Code2, Smartphone, Globe, Cpu, Layers, BarChart3, type LucideIcon } from "lucide-react";
+import bananaImg from "@/assets/banana.png";
+import techLayersImg from "@/assets/tech_layers.png";
 
-const services: { icon: LucideIcon; title: string; body: string }[] = [
+const services: { icon?: LucideIcon; title: string; body: string; image?: string }[] = [
   {
     icon: Globe,
     title: "Sites Web & Plateformes Marketing",
@@ -31,6 +33,16 @@ const services: { icon: LucideIcon; title: string; body: string }[] = [
     title: "Tableaux de Bord de Données",
     body: "Interfaces analytiques personnalisées, intégrations BI (Tableau, Power BI) et visualisation de données en temps réel.",
   },
+  {
+    image: bananaImg,
+    title: "Banana Labs — Special Projects",
+    body: "Des initiatives expérimentales alliant design d'avant-garde et technologies émergentes pour des marques audacieuses.",
+  },
+  {
+    image: techLayersImg,
+    title: "Une seule équipe. Chaque couche de la tech.",
+    body: "Stratégie, design et ingénierie intégrés pour livrer des produits numériques de bout en bout.",
+  },
 ];
 
 export function Services() {
@@ -38,29 +50,29 @@ export function Services() {
     <section className="px-6 lg:px-16 py-32 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <div className="liquid-glass inline-block rounded-full px-3.5 py-1 text-xs font-medium text-foreground font-body mb-6">
-          Services
+          What we do
         </div>
-        <h2 
-          className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-foreground tracking-tight leading-[0.9] max-w-3xl mx-auto cursor-pointer hover:text-foreground/80 transition-colors"
-          onClick={() => window.dispatchEvent(new CustomEvent("open-project", { detail: "kahoot" }))}
-        >
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-foreground tracking-tight leading-[0.9] max-w-3xl mx-auto">
           Une seule équipe. Chaque couche de la tech.
         </h2>
-        <p 
-          className="text-foreground/60 font-body font-light text-base max-w-xl mx-auto mt-6 cursor-pointer hover:text-foreground/40 transition-colors"
-          onClick={() => window.dispatchEvent(new CustomEvent("open-project", { detail: "kahoot" }))}
-        >
-          Stratégie, design produit, ingénierie et ops — entièrement intégrés pour que votre roadmap n'attende jamais.
+        <p className="text-foreground/60 font-body font-light text-base max-w-xl mx-auto mt-6">
+          Every engagement combines strategy, design, and engineering — so your roadmap never waits on a handoff.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map(({ icon: Icon, title, body }) => (
+        {services.map(({ icon: Icon, title, body, image }) => (
           <div key={title} className="liquid-glass rounded-2xl p-7 flex flex-col gap-5 group">
             <div className="flex items-center justify-between">
-              <div className="liquid-glass-strong rounded-full w-11 h-11 flex items-center justify-center">
-                <Icon className="h-4 w-4 text-foreground" />
-              </div>
+              {image ? (
+                <div className="w-11 h-11 rounded-full overflow-hidden border border-foreground/10">
+                  <img src={image} alt={title} className="w-full h-full object-cover" />
+                </div>
+              ) : Icon ? (
+                <div className="liquid-glass-strong rounded-full w-11 h-11 flex items-center justify-center">
+                  <Icon className="h-4 w-4 text-foreground" />
+                </div>
+              ) : null}
               <ArrowUpRight className="h-4 w-4 text-foreground/40 group-hover:text-foreground transition" />
             </div>
             <div>
