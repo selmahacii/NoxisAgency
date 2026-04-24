@@ -241,7 +241,7 @@ export function ProjectPlanner({ isOpen, onClose }: ProjectPlannerProps) {
                                 type="text"
                                 value={formData.name}
                                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                                placeholder="Jean Dupont"
+                                placeholder="full name"
                                 className="w-full bg-foreground/[0.03] border border-foreground/10 rounded-xl px-4 py-3 text-sm font-body text-foreground focus:outline-none focus:border-primary/40 transition"
                               />
                             </div>
@@ -251,7 +251,7 @@ export function ProjectPlanner({ isOpen, onClose }: ProjectPlannerProps) {
                                 type="email"
                                 value={formData.email}
                                 onChange={e => setFormData({ ...formData, email: e.target.value })}
-                                placeholder="jean@entreprise.com"
+                                placeholder="email@entreprise.com"
                                 className="w-full bg-foreground/[0.03] border border-foreground/10 rounded-xl px-4 py-3 text-sm font-body text-foreground focus:outline-none focus:border-primary/40 transition"
                               />
                             </div>
