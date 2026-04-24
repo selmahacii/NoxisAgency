@@ -24,11 +24,6 @@ const services: { icon?: LucideIcon; title: string; body: string; image?: string
     body: "Systèmes personnalisés adaptés à vos opérations — APIs, automatisations, intégrations.",
   },
   {
-    icon: Cpu,
-    title: "IA & Automatisation",
-    body: "Fonctionnalités basées sur les LLM, agents et automatisation de workflow qui s'améliorent avec le temps.",
-  },
-  {
     icon: BarChart3,
     title: "Tableaux de Bord de Données",
     body: "Interfaces analytiques personnalisées, intégrations BI (Tableau, Power BI) et visualisation de données en temps réel.",
@@ -37,11 +32,6 @@ const services: { icon?: LucideIcon; title: string; body: string; image?: string
     image: bananaImg,
     title: "Banana Labs — Special Projects",
     body: "Des initiatives expérimentales alliant design d'avant-garde et technologies émergentes pour des marques audacieuses.",
-  },
-  {
-    image: techLayersImg,
-    title: "Une seule équipe. Chaque couche de la tech.",
-    body: "Stratégie, design et ingénierie intégrés pour livrer des produits numériques de bout en bout.",
   },
 ];
 
