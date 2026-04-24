@@ -29,7 +29,7 @@ export function CtaFooter() {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mb-32">
           <a
-            href="#"
+            href="tel:+213780125700"
             className="liquid-glass-strong rounded-full px-6 py-3 inline-flex items-center gap-2 text-sm font-medium text-foreground"
           >
             Réserver un appel découverte
