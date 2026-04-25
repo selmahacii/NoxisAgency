@@ -62,6 +62,40 @@ import fiscAlgerieG2 from "@/assets/FiscAlgerie/image copy 2.png";
 
 import earioImg from "@/assets/earo/image.png";
 
+import soleVideo from "@/assets/sole/Screen Video (28).mp4";
+import soleImg from "@/assets/sole/image.png";
+import soleG1 from "@/assets/sole/image copy.png";
+import soleG2 from "@/assets/sole/image copy 2.png";
+import soleG3 from "@/assets/sole/image copy 3.png";
+import soleG4 from "@/assets/sole/image copy 4.png";
+import soleG5 from "@/assets/sole/image copy 5.png";
+import soleG6 from "@/assets/sole/image copy 6.png";
+import soleG7 from "@/assets/sole/image copy 7.png";
+import soleG8 from "@/assets/sole/image copy 8.png";
+import soleG9 from "@/assets/sole/image copy 9.png";
+
+import zenMedImg from "@/assets/ZenMed/image.png";
+import zenMedG1 from "@/assets/ZenMed/image copy.png";
+import zenMedG2 from "@/assets/ZenMed/image copy 2.png";
+import zenMedG3 from "@/assets/ZenMed/image copy 3.png";
+import zenMedG4 from "@/assets/ZenMed/image copy 4.png";
+import zenMedG5 from "@/assets/ZenMed/image copy 5.png";
+import zenMedG6 from "@/assets/ZenMed/image copy 6.png";
+import zenMedG7 from "@/assets/ZenMed/image copy 7.png";
+import zenMedG8 from "@/assets/ZenMed/image copy 8.png";
+import zenMedG9 from "@/assets/ZenMed/image copy 9.png";
+
+import medicareVideo from "@/assets/Medicaredz/Screen Video (29).mp4";
+import medicareImg from "@/assets/Medicaredz/image.png";
+import medicareG1 from "@/assets/Medicaredz/image copy.png";
+import medicareG2 from "@/assets/Medicaredz/image copy 2.png";
+import medicareG3 from "@/assets/Medicaredz/image copy 3.png";
+import medicareG4 from "@/assets/Medicaredz/image copy 4.png";
+import medicareG5 from "@/assets/Medicaredz/image copy 5.png";
+import medicareG6 from "@/assets/Medicaredz/image copy 6.png";
+import medicareG7 from "@/assets/Medicaredz/image copy 7.png";
+import medicareG8 from "@/assets/Medicaredz/image copy 8.png";
+
 
 
 export interface Project {
@@ -249,6 +283,69 @@ export const projects: Project[] = [
       { label: "Décisions", value: "IA Assistée" },
     ],
     onlyWorkPage: true,
+  },
+  {
+    id: "sole",
+    title: "Sole",
+    category: "Full-Stack — E-commerce de Chaussures Premium",
+    year: "2025",
+    client: "Sole Global",
+    duration: "14 semaines",
+    image: soleImg,
+    video: soleVideo,
+    gallery: [soleG1, soleG2, soleG3, soleG4, soleG5, soleG6, soleG7, soleG8, soleG9],
+    summary: "Plateforme e-commerce moderne pour chaussures avec une interface minimaliste inspirée de Framer.",
+    challenge: "Créer un écosystème de vente complet alliant performance extrême, animations fluides et gestion d'inventaire multi-catégories (Homme, Femme, Enfant).",
+    description: "Sole redéfinit l'achat de chaussures en ligne avec des transitions fluides, un filtrage avancé et un tunnel d'achat optimisé pour la conversion. Le système inclut un dashboard complet pour la gestion des stocks et des commandes.",
+    services: ["UX/UI Design", "E-commerce Architecture", "Motion Design", "Admin Dashboard"],
+    stack: ["React", "Framer Motion", "Node.js", "Tailwind CSS", "PostgreSQL"],
+    results: [
+      { label: "Conversion", value: "+45%" },
+      { label: "Performance", value: "99/100" },
+      { label: "Mobile First", value: "100%" },
+    ],
+    onlyWorkPage: true,
+  },
+  {
+    id: "medicaredz",
+    title: "Medicare.dz",
+    category: "HealthTech — Système de Gestion de Santé Intégré",
+    year: "2024",
+    client: "Medicare Algeria",
+    duration: "20 semaines",
+    image: medicareImg,
+    video: medicareVideo,
+    gallery: [medicareG1, medicareG2, medicareG3, medicareG4, medicareG5, medicareG6, medicareG7, medicareG8],
+    summary: "Plateforme de gestion hospitalière et de prise de rendez-vous médicaux pour le marché algérien.",
+    challenge: "Digitaliser le parcours de soin en Algérie en créant une interface unifiée pour les patients, les médecins et les hôpitaux.",
+    description: "Medicare.dz est une solution full-stack permettant la gestion des dossiers patients, la planification des ressources hospitalières et une prise de rendez-vous simplifiée. L'architecture garantit la sécurité des données de santé et une accessibilité optimale.",
+    services: ["Architecture Cloud", "Dossier Médical Partagé", "SaaS Médical", "UI/UX Santé"],
+    stack: ["Next.js", "PostgreSQL", "Redis", "Docker", "Go"],
+    results: [
+      { label: "Patients", value: "+100k" },
+      { label: "Temps Attente", value: "-70%" },
+      { label: "Disponibilité", value: "99.9%" },
+    ],
+  },
+  {
+    id: "zenmed",
+    title: "ZenMed",
+    category: "HealthTech — Plateforme de Soins Préventifs",
+    year: "2025",
+    client: "ZenMed Healthcare US",
+    duration: "18 semaines",
+    image: zenMedImg,
+    gallery: [zenMedG1, zenMedG2, zenMedG3, zenMedG4, zenMedG5, zenMedG6, zenMedG7, zenMedG8, zenMedG9],
+    summary: "Solution haut de gamme de gestion de rendez-vous et de suivi médical axée sur l'expérience patient aux États-Unis.",
+    challenge: "Concevoir une interface minimaliste qui réduit l'anxiété liée aux rendez-vous médicaux tout en respectant les normes HIPAA.",
+    description: "ZenMed combine une gestion intelligente des agendas médicaux avec des outils de télémédecine et de suivi post-consultation. La plateforme offre une navigation ultra-fluide pour les patients et un tableau de bord analytique puissant.",
+    services: ["Design UI/UX Zen", "Conformité HIPAA", "Télémédecine", "Système de Rappels IA"],
+    stack: ["React", "Node.js", "AWS HealthLake", "Tailwind CSS", "Framer Motion"],
+    results: [
+      { label: "No-Show Rate", value: "-40%" },
+      { label: "Satisfaction", value: "4.9/5" },
+      { label: "Booking Speed", value: "30s" },
+    ],
   },
 ];
 
