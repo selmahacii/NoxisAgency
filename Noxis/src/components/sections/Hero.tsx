@@ -32,14 +32,13 @@ export function Hero() {
         src={heroVideo}
         className="absolute inset-0 w-full h-full object-cover z-0 grayscale brightness-[1.15] contrast-[0.85] opacity-40"
       />
-      <div className="absolute inset-0 bg-background/20 backdrop-blur-[1px] z-0" />
+      <div className="absolute inset-0 bg-background/20 z-0" />
       <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-overlay"
+        className="absolute inset-0 z-0 pointer-events-none opacity-10"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(180,220,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(180,220,255,0.15) 1px, transparent 1px)",
+            "linear-gradient(rgba(180,220,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(180,220,255,0.1) 1px, transparent 1px)",
           backgroundSize: "48px 48px",
-          maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
         }}
       />
       <div
