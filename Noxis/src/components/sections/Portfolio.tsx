@@ -109,6 +109,24 @@ import medicareG6 from "@/assets/Medicaredz/image copy 6.png";
 import medicareG7 from "@/assets/Medicaredz/image copy 7.png";
 import medicareG8 from "@/assets/Medicaredz/image copy 8.png";
 
+import noxisLogisticsVideo from "@/assets/Noxis/Screen Video (30).mp4";
+import noxisLogisticsImg from "@/assets/Noxis/image.png";
+import noxisLogisticsG1 from "@/assets/Noxis/image copy.png";
+import noxisLogisticsG2 from "@/assets/Noxis/image copy 2.png";
+import noxisLogisticsG3 from "@/assets/Noxis/image copy 3.png";
+import noxisLogisticsG4 from "@/assets/Noxis/image copy 4.png";
+import noxisLogisticsG5 from "@/assets/Noxis/image copy 5.png";
+import noxisLogisticsG6 from "@/assets/Noxis/image copy 6.png";
+
+import teraImg from "@/assets/Tera/image.png";
+import teraG1 from "@/assets/Tera/image copy.png";
+import teraG2 from "@/assets/Tera/image copy 2.png";
+import teraG3 from "@/assets/Tera/image copy 3.png";
+import teraG4 from "@/assets/Tera/image copy 4.png";
+import teraG5 from "@/assets/Tera/image copy 5.png";
+import teraG6 from "@/assets/Tera/image copy 6.png";
+import teraG7 from "@/assets/Tera/image copy 7.png";
+
 
 
 export interface Project {
@@ -360,6 +378,47 @@ export const projects: Project[] = [
       { label: "No-Show Rate", value: "-40%" },
       { label: "Satisfaction", value: "4.9/5" },
       { label: "Booking Speed", value: "30s" },
+    ],
+  },
+  {
+    id: "noxis-logistics",
+    title: "Noxis Logistics",
+    category: "SaaS — OS de Logistique & Last-Mile",
+    year: "2025",
+    client: "Noxis Solutions",
+    duration: "22 semaines",
+    image: noxisLogisticsImg,
+    video: noxisLogisticsVideo,
+    gallery: [noxisLogisticsImg, noxisLogisticsG1, noxisLogisticsG2, noxisLogisticsG3, noxisLogisticsG4, noxisLogisticsG5, noxisLogisticsG6],
+    summary: "Solution SaaS de gestion de flotte et de livraison dernier kilomètre optimisée pour le marché algérien.",
+    challenge: "Gérer le suivi en temps réel des chauffeurs, l'optimisation des tournées et la réconciliation financière des paiements à la livraison (COD) à grande échelle.",
+    description: "Noxis Logistics est un système d'exploitation complet pour les prestataires de livraison. Il intègre un suivi GPS haute précision, un algorithme de routage intelligent et une passerelle de paiement automatisée pour BaridiMob et CIB.",
+    services: ["Architecture SaaS", "Optimisation Temps Réel", "Système de Paiement COD", "Fleet Tracking"],
+    stack: ["React", "Node.js", "Redis", "Google Maps API", "PostgreSQL"],
+    results: [
+      { label: "Efficacité", value: "+35%" },
+      { label: "Suivi COD", value: "100%" },
+      { label: "Livraisons/jour", value: "5k+" },
+    ],
+  },
+  {
+    id: "tera",
+    title: "Tera",
+    category: "PropTech — Plateforme d'Investissement Immobilier",
+    year: "2025",
+    client: "Tera Group",
+    duration: "16 semaines",
+    image: teraImg,
+    gallery: [teraImg, teraG1, teraG2, teraG3, teraG4, teraG5, teraG6, teraG7],
+    summary: "Écosystème numérique pour la promotion immobilière de luxe et la gestion d'actifs.",
+    challenge: "Simplifier l'accès à l'investissement immobilier via une interface architecturale et des outils de suivi transparents.",
+    description: "Tera redéfinit l'expérience immobilière avec un dashboard investisseur complet, des visualisations haute fidélité et une gestion dématérialisée des dossiers d'acquisition.",
+    services: ["UX/UI Design Architecturel", "SaaS Immobilier", "Architecture Cloud", "Dashboard Investisseur"],
+    stack: ["Next.js", "Supabase", "Tailwind CSS", "Framer Motion"],
+    results: [
+      { label: "Réservations", value: "+30%" },
+      { label: "Satisfaction", value: "4.8/5" },
+      { label: "Transparence", value: "100%" },
     ],
   },
 ];
