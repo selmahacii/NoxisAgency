@@ -20,7 +20,7 @@ export function Navbar() {
     <>
       <nav className="fixed top-4 left-0 right-0 z-50 px-6 lg:px-16 py-3 flex items-center justify-between pointer-events-none">
         <Link to="/" className="flex items-center pointer-events-auto">
-          <img src={logo} alt="Noxis" className="h-7 md:h-8 w-auto brightness-0" height={32} />
+          <img src={logo} alt="Noxis" className="h-7 md:h-8 w-auto" height={32} />
         </Link>
 
         <div className="hidden md:flex liquid-glass rounded-full px-1.5 py-1 items-center gap-1 pointer-events-auto">

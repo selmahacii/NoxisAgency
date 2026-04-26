@@ -118,6 +118,7 @@ import noxisLogisticsG4 from "@/assets/Noxis/image copy 4.png";
 import noxisLogisticsG5 from "@/assets/Noxis/image copy 5.png";
 import noxisLogisticsG6 from "@/assets/Noxis/image copy 6.png";
 
+import teraImg from "@/assets/Tera/image.png";
 import teraG7 from "@/assets/Tera/image copy 7.png";
 
 import atlasImg from "@/assets/concepts/atlas.png";
