@@ -146,6 +146,7 @@ export interface Project {
   gallery?: string[];
   video?: string;
   onlyWorkPage?: boolean;
+  isConcept?: boolean;
 }
 
 export const projects: Project[] = [
@@ -421,6 +422,66 @@ export const projects: Project[] = [
       { label: "Transparence", value: "100%" },
     ],
   },
+  {
+    id: "atlas-banking",
+    title: "ATLAS Banking OS",
+    category: "Fintech — Concept Studio",
+    year: "2026",
+    client: "Concept R&D",
+    duration: "Concept",
+    image: "/atlas_banking_concept_1777222504921.png",
+    summary: "Système d'exploitation bancaire nouvelle génération pour le pilotage stratégique.",
+    challenge: "Moderniser l'infrastructure de pilotage des banques algériennes avec une visualisation temps réel des indicateurs critiques.",
+    description: "Une interface Liquid-Glass style Bloomberg Terminal conçue pour les DG et DAF. Architecture microservices avec WebSocket pour un monitoring sans latence des flux financiers.",
+    services: ["Architecture Fintech", "Data Visualization", "Systèmes Temps Réel"],
+    stack: ["React", "Go", "WebSockets", "PostgreSQL"],
+    results: [
+      { label: "Vitesse Flux", value: "<10ms" },
+      { label: "Conformité", value: "BAFI" },
+      { label: "Pilotage", value: "IA" },
+    ],
+    isConcept: true,
+  },
+  {
+    id: "meridian-retail",
+    title: "MERIDIAN Platform",
+    category: "Retail Tech — Concept Studio",
+    year: "2026",
+    client: "Concept R&D",
+    duration: "Concept",
+    image: "/meridian_retail_concept_1777222520653.png",
+    summary: "Retail Intelligence Platform pour la grande distribution algérienne.",
+    challenge: "Optimiser la supply chain et le parcours client en magasin via l'IoT et l'IA prédictive.",
+    description: "Cartographie 3D interactive avec overlay de heatmaps. Analyse du trafic par Computer Vision et forecasting intelligent des ruptures de stock.",
+    services: ["IoT Distribution", "Computer Vision", "IA Prédictive"],
+    stack: ["Python", "Three.js", "MQTT", "TensorFlow"],
+    results: [
+      { label: "Optimisation", value: "+25%" },
+      { label: "Précision Stock", value: "99%" },
+      { label: "Insight", value: "Temps Réel" },
+    ],
+    isConcept: true,
+  },
+  {
+    id: "sahara-data",
+    title: "SAHARA Economic Dashboard",
+    category: "Data Viz — Moonshot Studio",
+    year: "2026",
+    client: "Open Source / Public",
+    duration: "In Progress",
+    image: "/sahara_data_concept_1777222537605.png",
+    summary: "Dashboard d'intelligence économique sur la macroéconomie algérienne.",
+    challenge: "Faire parler les données économiques de l'Algérie via une interface WebGL immersive et des pipelines automatisés.",
+    description: "Un globe 3D interactif visualisant les flux commerciaux, l'inflation et les indicateurs ONS. Un outil d'autorité pour les décideurs et chercheurs.",
+    services: ["Economic Intelligence", "WebGL / Three.js", "Data Engineering"],
+    stack: ["Three.js", "D3.js", "Python Scraping", "Vercel"],
+    results: [
+      { label: "Indicateurs", value: "50+" },
+      { label: "Mise à jour", value: "Auto" },
+      { label: "Portée", value: "Nationale" },
+    ],
+    isConcept: true,
+  },
 ];
 
 export const hiddenProjects: Project[] = [
@@ -540,6 +601,13 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                     {p.title}
                   </h3>
                 </div>
+                {p.isConcept && (
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary/90 text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+                      Concept Studio
+                    </span>
+                  </div>
+                )}
               </div>
             </button>
           </Reveal>
@@ -595,6 +663,13 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                   <h3 className="text-4xl md:text-5xl font-heading italic text-foreground leading-tight">
                     {active.title}
                   </h3>
+                  {active.isConcept && (
+                    <div className="mt-4">
+                      <span className="bg-primary text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">
+                        Concept Studio
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
 
