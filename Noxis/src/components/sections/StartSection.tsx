@@ -5,7 +5,7 @@ export function StartSection() {
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Animated gradient mesh background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/3 -left-1/4 w-[70%] h-[70%] rounded-full opacity-50 blur-3xl animate-blob-slow"
           style={{ background: "radial-gradient(circle, oklch(0.55 0.22 240) 0%, transparent 70%)" }}
         />

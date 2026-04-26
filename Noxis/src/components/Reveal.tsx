@@ -15,10 +15,11 @@ export function Reveal({ children, delay = 0, y = 30, className }: Props) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y, filter: "blur(8px)" }}
+      initial={{ opacity: 0, y, filter: "blur(4px)" }}
       animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
+      style={{ willChange: "transform, opacity, filter" }}
     >
       {children}
     </motion.div>

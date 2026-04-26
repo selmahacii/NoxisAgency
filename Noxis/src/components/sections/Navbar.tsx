@@ -18,12 +18,13 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-4 left-0 right-0 z-50 px-6 lg:px-16 py-3 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+      <nav className="fixed top-4 left-0 right-0 z-50 px-6 lg:px-16 py-3 flex items-center justify-between pointer-events-none">
+        <Link to="/" className="flex items-center pointer-events-auto">
           <img src={logo} alt="Noxis" className="h-7 md:h-8 w-auto brightness-0" height={32} />
         </Link>
 
-        <div className="hidden md:flex liquid-glass rounded-full px-1.5 py-1 items-center gap-1">
+        <div className="hidden md:flex liquid-glass rounded-full px-1.5 py-1 items-center gap-1 pointer-events-auto">
+          {/* ... existing links ... */}
           {links.map((l) => (
             <Link
               key={l.to}
@@ -59,7 +60,7 @@ export function Navbar() {
 
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center text-foreground"
+          className="md:hidden liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center text-foreground pointer-events-auto"
           aria-label="Open menu"
         >
           <Menu className="h-4 w-4" />

@@ -14,13 +14,13 @@ const dictionaries: Record<Lang, Dict> = {
     "nav.cta": "Démarrer",
     "nav.quote": "Obtenir un devis",
 
-    "hero.badge": "Studio Tech & Design",
-    "hero.title": "Des services conçus pour les équipes ambitieuses.",
+    "hero.badge": "Studio Tech Senior",
+    "hero.title": "Nous ne construisons pas des logiciels. Nous construisons votre avantage concurrentiel.",
     "hero.subtitle":
-      "Chaque collaboration allie stratégie, design et ingénierie — pour que votre vision ne s'arrête jamais.",
-    "hero.cta1": "Lancer un projet",
+      "Studio technique senior basé à Alger — spécialisé dans les systèmes critiques pour la Fintech, la Santé et la Distribution.",
+    "hero.cta1": "Voir notre approche",
     "hero.cta2": "Voir le showreel",
-    "hero.partners": "Ils nous font confiance",
+    "hero.partners": "Expertise prouvée avec",
 
     "portfolio.badge": "Réalisations",
     "portfolio.title": "Projets récents.",
@@ -45,13 +45,13 @@ const dictionaries: Record<Lang, Dict> = {
     "nav.cta": "ابدأ الآن",
     "nav.quote": "طلب تسعيرة",
 
-    "hero.badge": "وكالة تقنية تبني المستقبل.",
-    "hero.title": "نبني برمجيات تدفع علاماتك التجارية إلى الأمام",
+    "hero.badge": "ستوديو تقني خبير",
+    "hero.title": "نحن لا نبني برمجيات فقط. نحن نبني ميزتكم التنافسية.",
     "hero.subtitle":
-      "مواقع، تطبيقات ويب، تطبيقات جوال ومنصات مخصصة. استراتيجية، تصميم وهندسة تحت سقف واحد — بسرعة عملك الحقيقية.",
-    "hero.cta1": "ابدأ مشروعاً",
+      "ستوديو تقني خبير مقره الجزائر العاصمة — متخصص في الأنظمة الحيوية للتكنولوجيا المالية، الصحة والتوزيع.",
+    "hero.cta1": "اكتشف منهجيتنا",
     "hero.cta2": "شاهد العرض",
-    "hero.partners": "يثقون بنا",
+    "hero.partners": "خبرة مثبتة مع",
 
     "portfolio.badge": "أعمالنا",
     "portfolio.title": "مشاريع حديثة.",

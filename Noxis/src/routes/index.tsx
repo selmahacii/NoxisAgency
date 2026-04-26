@@ -37,9 +37,9 @@ function Index() {
       <Navbar />
       <Hero />
       <Reveal><Services /></Reveal>
+      <Portfolio />
       <Reveal><StartSection /></Reveal>
       <Reveal><FeaturesChess /></Reveal>
-      <Portfolio />
       <Reveal><FeaturesGrid /></Reveal>
       <Reveal><Stats /></Reveal>
       <Reveal><Testimonials /></Reveal>
