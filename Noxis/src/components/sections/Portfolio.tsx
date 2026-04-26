@@ -61,6 +61,19 @@ import fiscAlgerieG1 from "@/assets/FiscAlgerie/image copy.png";
 import fiscAlgerieG2 from "@/assets/FiscAlgerie/image copy 2.png";
 
 import earioImg from "@/assets/earo/image.png";
+import earioG1 from "@/assets/earo/image copy.png";
+import earioG2 from "@/assets/earo/image copy 2.png";
+import earioG3 from "@/assets/earo/image copy 3.png";
+import earioG4 from "@/assets/earo/image copy 4.png";
+import earioG5 from "@/assets/earo/image copy 5.png";
+import earioG6 from "@/assets/earo/image copy 6.png";
+import earioG7 from "@/assets/earo/image copy 7.png";
+import earioG8 from "@/assets/earo/image copy 8.png";
+import earioG9 from "@/assets/earo/image copy 9.png";
+import earioG10 from "@/assets/earo/image copy 10.png";
+import earioG11 from "@/assets/earo/image copy 11.png";
+import earioG12 from "@/assets/earo/image copy 12.png";
+import earioG13 from "@/assets/earo/image copy 13.png";
 
 import soleVideo from "@/assets/sole/Screen Video (28).mp4";
 import soleImg from "@/assets/sole/image.png";
@@ -127,7 +140,7 @@ export const projects: Project[] = [
     duration: "18 semaines",
     image: elMalikaImg,
     video: elMalikaVideo,
-    gallery: [elMalikaG1, elMalikaG2, elMalikaG3, elMalikaG4],
+    gallery: [elMalikaImg, elMalikaG1, elMalikaG2, elMalikaG3, elMalikaG4],
     summary: "Écosystème e-commerce complet avec inventaire en temps réel et esthétique haute couture.",
     challenge: "Développer une solution de vente en ligne complète alliant une interface 'Couture' à une infrastructure backend robuste capable de gérer un inventaire complexe.",
     description: "Une plateforme e-commerce haute performance intégrant une logique de panier complexe, une synchronisation d'inventaire en temps réel et une architecture de données optimisée pour la conversion et le storytelling fluide.",
@@ -148,7 +161,7 @@ export const projects: Project[] = [
     duration: "16 semaines",
     image: moistleafImg,
     video: moistleafVideo,
-    gallery: [moistleafG1, moistleafG2, moistleafG3],
+    gallery: [moistleafImg, moistleafG1, moistleafG2, moistleafG3],
     summary: "Système intelligent de surveillance de l'hydratation et du soin des plantes pour les espaces urbains.",
     challenge: "Traduire des données complexes de capteurs environnementaux en une interface simple et élégante qui encourage une interaction consciente avec la nature.",
     description: "Développement d'une application mobile complète et d'un tableau de bord connectés au matériel IoT de Moistleaf, fournissant des alertes d'hydratation en temps réel et des analyses environnementales.",
@@ -169,7 +182,7 @@ export const projects: Project[] = [
     duration: "14 semaines",
     image: maisonOrelieImg,
     video: maisonOrelieVideo,
-    gallery: [maisonOrelieG1, maisonOrelieG2, maisonOrelieG3, maisonOrelieG4, maisonOrelieG5],
+    gallery: [maisonOrelieImg, maisonOrelieG1, maisonOrelieG2, maisonOrelieG3, maisonOrelieG4, maisonOrelieG5],
     summary: "Flagship numérique pour une maison de mode parisienne de luxe.",
     challenge: "Créer une expérience numérique qui reflète l'exclusivité et le savoir-faire de leur boutique physique tout en maintenant des taux de conversion élevés.",
     description: "Une solution de commerce headless avec storytelling cinématographique, visualisation de produits en 3D immersive et un processus de paiement mondial fluide.",
@@ -189,7 +202,7 @@ export const projects: Project[] = [
     client: "Nora Designs",
     duration: "10 semaines",
     image: noraFurnitureImg,
-    gallery: [noraFurnitureG1, noraFurnitureG2, noraFurnitureG3, noraFurnitureG4, noraFurnitureG5, noraFurnitureG6],
+    gallery: [noraFurnitureImg, noraFurnitureG1, noraFurnitureG2, noraFurnitureG3, noraFurnitureG4, noraFurnitureG5, noraFurnitureG6],
     summary: "Marque de mobilier durable mettant l'accent sur l'artisanat et l'impact environnemental.",
     challenge: "Présenter les textures uniques et les origines durables de chaque meuble via un support numérique.",
     description: "Conception d'une plateforme e-commerce éditoriale qui met en avant l'histoire de chaque matériau, utilisant des images haute résolution et un storytelling interactif.",
@@ -210,7 +223,7 @@ export const projects: Project[] = [
     duration: "10 semaines",
     image: meeyNailshopImg,
     video: meeyNailshopVideo,
-    gallery: [meeyNailshopG1, meeyNailshopG2, meeyNailshopG3, meeyNailshopG4, meeyNailshopG5, meeyNailshopG6, meeyNailshopG7, meeyNailshopG8],
+    gallery: [meeyNailshopImg, meeyNailshopG1, meeyNailshopG2, meeyNailshopG3, meeyNailshopG4, meeyNailshopG5, meeyNailshopG6, meeyNailshopG7, meeyNailshopG8],
     summary: "Expérience numérique élégante pour un salon de manucure haut de gamme, intégrant réservation et boutique.",
     challenge: "Concevoir une plateforme fluide qui permet aux clientes de prendre rendez-vous facilement tout en découvrant les produits exclusifs du salon.",
     description: "Une solution hybride alliant un système de réservation temps réel et une boutique e-commerce optimisée. L'interface mise sur des tons doux et des animations subtiles pour refléter l'ambiance du salon.",
@@ -232,6 +245,7 @@ export const projects: Project[] = [
     duration: "12 semaines",
     image: furniSpaceImg,
     video: furniSpaceVideo,
+    gallery: [furniSpaceImg],
     summary: "Plateforme immersive de vente de mobilier avec rendu haute fidélité.",
     challenge: "Créer une expérience d'achat immersive pour du mobilier haut de gamme avec visualisation spatiale et fluidité extrême.",
     description: "Noxis a développé une plateforme e-commerce innovante mettant l'accent sur le rendu visuel. L'interface minimaliste laisse place aux produits, tandis qu'une infrastructure backend solide gère des milliers de références en temps réel.",
@@ -251,7 +265,7 @@ export const projects: Project[] = [
     client: "Fisc Algérie",
     duration: "16 semaines",
     image: fiscAlgerieImg,
-    gallery: [fiscAlgerieG1, fiscAlgerieG2],
+    gallery: [fiscAlgerieImg, fiscAlgerieG1, fiscAlgerieG2],
     summary: "Solution SaaS de gestion fiscale et financière pour les entreprises.",
     challenge: "Digitaliser et simplifier la gestion fiscale complexe pour les entreprises algériennes via une interface intuitive.",
     description: "Développement d'un tableau de bord robuste permettant de suivre les déclarations, les échéances et les flux financiers. Le système intègre des calculs automatisés et un archivage sécurisé des documents fiscaux.",
@@ -272,6 +286,7 @@ export const projects: Project[] = [
     client: "Eario.ai",
     duration: "16 semaines",
     image: earioImg,
+    gallery: [earioImg, earioG1, earioG2, earioG3, earioG4, earioG5, earioG6, earioG7, earioG8, earioG9, earioG10, earioG11, earioG12, earioG13],
     summary: "Plateforme unifiée de gestion d’entreprise remplaçant la fragmentation des outils par un système intelligent centralisé.",
     challenge: "Supprimer la complexité des outils déconnectés (CRM, ERP, finance) en créant un hub opérationnel unique où chaque donnée circule en temps réel.",
     description: "Eario.ai est structuré autour de 5 piliers : Sales Pipeline, Clients, Invoices, Inventory et Finance, avec une couche d'IA (Insights) pour les prévisions et recommandations business. La plateforme transforme les données brutes en actions concrètes.",
@@ -293,7 +308,7 @@ export const projects: Project[] = [
     duration: "14 semaines",
     image: soleImg,
     video: soleVideo,
-    gallery: [soleG1, soleG2, soleG3, soleG4, soleG5, soleG6, soleG7, soleG8, soleG9],
+    gallery: [soleImg, soleG1, soleG2, soleG3, soleG4, soleG5, soleG6, soleG7, soleG8, soleG9],
     summary: "Plateforme e-commerce moderne pour chaussures avec une interface minimaliste inspirée de Framer.",
     challenge: "Créer un écosystème de vente complet alliant performance extrême, animations fluides et gestion d'inventaire multi-catégories (Homme, Femme, Enfant).",
     description: "Sole redéfinit l'achat de chaussures en ligne avec des transitions fluides, un filtrage avancé et un tunnel d'achat optimisé pour la conversion. Le système inclut un dashboard complet pour la gestion des stocks et des commandes.",
@@ -315,7 +330,7 @@ export const projects: Project[] = [
     duration: "20 semaines",
     image: medicareImg,
     video: medicareVideo,
-    gallery: [medicareG1, medicareG2, medicareG3, medicareG4, medicareG5, medicareG6, medicareG7, medicareG8],
+    gallery: [medicareImg, medicareG1, medicareG2, medicareG3, medicareG4, medicareG5, medicareG6, medicareG7, medicareG8],
     summary: "Plateforme de gestion hospitalière et de prise de rendez-vous médicaux pour le marché algérien.",
     challenge: "Digitaliser le parcours de soin en Algérie en créant une interface unifiée pour les patients, les médecins et les hôpitaux.",
     description: "Medicare.dz est une solution full-stack permettant la gestion des dossiers patients, la planification des ressources hospitalières et une prise de rendez-vous simplifiée. L'architecture garantit la sécurité des données de santé et une accessibilité optimale.",
@@ -335,7 +350,7 @@ export const projects: Project[] = [
     client: "ZenMed Healthcare US",
     duration: "18 semaines",
     image: zenMedImg,
-    gallery: [zenMedG1, zenMedG2, zenMedG3, zenMedG4, zenMedG5, zenMedG6, zenMedG7, zenMedG8, zenMedG9],
+    gallery: [zenMedImg, zenMedG1, zenMedG2, zenMedG3, zenMedG4, zenMedG5, zenMedG6, zenMedG7, zenMedG8, zenMedG9],
     summary: "Solution haut de gamme de gestion de rendez-vous et de suivi médical axée sur l'expérience patient aux États-Unis.",
     challenge: "Concevoir une interface minimaliste qui réduit l'anxiété liée aux rendez-vous médicaux tout en respectant les normes HIPAA.",
     description: "ZenMed combine une gestion intelligente des agendas médicaux avec des outils de télémédecine et de suivi post-consultation. La plateforme offre une navigation ultra-fluide pour les patients et un tableau de bord analytique puissant.",
@@ -359,7 +374,7 @@ export const hiddenProjects: Project[] = [
     duration: "12 semaines",
     image: kahootImg,
     video: kahootVideo,
-    gallery: [kahootG1, kahootG2, kahootG3, kahootG4, kahootG5],
+    gallery: [kahootImg, kahootG1, kahootG2, kahootG3, kahootG4, kahootG5],
     summary: "Plateforme d'apprentissage interactive de nouvelle génération avec engagement en temps réel amélioré.",
     challenge: "Réimaginer l'expérience Kahoot pour l'enseignement supérieur et la formation en entreprise, nécessitant une esthétique sophistiquée et un suivi de données avancé.",
     description: "Noxis a conçu un nouveau langage visuel et un tableau de bord en temps réel pour Kahoot, axé sur les interactions rapides et les résultats éducatifs clairs.",
