@@ -71,9 +71,6 @@
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    position: relative;
-    width: 100%;
   }
 
   /* Support for momentum scrolling on iOS */

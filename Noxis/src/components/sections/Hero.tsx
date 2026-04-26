@@ -47,7 +47,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden min-h-[700px] h-[90vh] lg:h-[1000px]">
+    <section className="relative overflow-hidden min-h-[90svh] lg:min-h-[1000px]">
       <video
         ref={videoRef}
         autoPlay
