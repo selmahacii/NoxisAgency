@@ -574,7 +574,7 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (

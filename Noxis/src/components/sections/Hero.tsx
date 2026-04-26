@@ -53,6 +53,7 @@ export function Hero() {
         autoPlay
         muted
         playsInline
+        preload="auto"
         src={heroVideo}
         className="absolute inset-0 w-full h-full object-cover z-0 grayscale brightness-[1.15] contrast-[0.85] opacity-40"
       />
