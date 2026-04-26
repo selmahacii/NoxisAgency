@@ -118,14 +118,11 @@ import noxisLogisticsG4 from "@/assets/Noxis/image copy 4.png";
 import noxisLogisticsG5 from "@/assets/Noxis/image copy 5.png";
 import noxisLogisticsG6 from "@/assets/Noxis/image copy 6.png";
 
-import teraImg from "@/assets/Tera/image.png";
-import teraG1 from "@/assets/Tera/image copy.png";
-import teraG2 from "@/assets/Tera/image copy 2.png";
-import teraG3 from "@/assets/Tera/image copy 3.png";
-import teraG4 from "@/assets/Tera/image copy 4.png";
-import teraG5 from "@/assets/Tera/image copy 5.png";
-import teraG6 from "@/assets/Tera/image copy 6.png";
 import teraG7 from "@/assets/Tera/image copy 7.png";
+
+import atlasImg from "@/assets/concepts/atlas.png";
+import meridianImg from "@/assets/concepts/meridian.png";
+import saharaImg from "@/assets/concepts/sahara.png";
 
 
 
@@ -429,7 +426,7 @@ export const projects: Project[] = [
     year: "2026",
     client: "Concept R&D",
     duration: "Concept",
-    image: "/atlas_banking_concept_1777222504921.png",
+    image: atlasImg,
     summary: "Système d'exploitation bancaire nouvelle génération pour le pilotage stratégique.",
     challenge: "Moderniser l'infrastructure de pilotage des banques algériennes avec une visualisation temps réel des indicateurs critiques.",
     description: "Une interface Liquid-Glass style Bloomberg Terminal conçue pour les DG et DAF. Architecture microservices avec WebSocket pour un monitoring sans latence des flux financiers.",
@@ -449,7 +446,7 @@ export const projects: Project[] = [
     year: "2026",
     client: "Concept R&D",
     duration: "Concept",
-    image: "/meridian_retail_concept_1777222520653.png",
+    image: meridianImg,
     summary: "Retail Intelligence Platform pour la grande distribution algérienne.",
     challenge: "Optimiser la supply chain et le parcours client en magasin via l'IoT et l'IA prédictive.",
     description: "Cartographie 3D interactive avec overlay de heatmaps. Analyse du trafic par Computer Vision et forecasting intelligent des ruptures de stock.",
@@ -469,7 +466,7 @@ export const projects: Project[] = [
     year: "2026",
     client: "Open Source / Public",
     duration: "In Progress",
-    image: "/sahara_data_concept_1777222537605.png",
+    image: saharaImg,
     summary: "Dashboard d'intelligence économique sur la macroéconomie algérienne.",
     challenge: "Faire parler les données économiques de l'Algérie via une interface WebGL immersive et des pipelines automatisés.",
     description: "Un globe 3D interactif visualisant les flux commerciaux, l'inflation et les indicateurs ONS. Un outil d'autorité pour les décideurs et chercheurs.",
