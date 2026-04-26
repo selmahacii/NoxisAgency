@@ -13,37 +13,11 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    let direction = 1; // 1 for forward, -1 for backward
-    let rafId: number;
-    let lastTime = performance.now();
-
-    const update = (now: number) => {
-      const delta = (now - lastTime) / 1000;
-      lastTime = now;
-
-      if (direction === 1) {
-        if (video.duration && video.currentTime >= video.duration - 0.1) {
-          direction = -1;
-          video.pause();
-        }
-      } else {
-        video.currentTime = Math.max(0, video.currentTime - delta);
-        if (video.currentTime <= 0.05) {
-          direction = 1;
-          video.play();
-        }
-      }
-
-      rafId = requestAnimationFrame(update);
-    };
-
-    rafId = requestAnimationFrame(update);
-    return () => {
-      cancelAnimationFrame(rafId);
-    };
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay might be blocked, handled by autoPlay/muted props
+      });
+    }
   }, []);
 
   return (
@@ -52,6 +26,7 @@ export function Hero() {
         ref={videoRef}
         autoPlay
         muted
+        loop
         playsInline
         preload="auto"
         src={heroVideo}
