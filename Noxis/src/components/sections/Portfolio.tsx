@@ -605,6 +605,8 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
   const [active, setActive] = useState<Project | null>(null);
   const [enlarge, setEnlarge] = useState<string | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const { t } = useI18n();
 
   // Reset gallery index when changing project
@@ -670,16 +672,20 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
           {/* Main Scrolling Container */}
           <div className="flex overflow-hidden group">
             <motion.div
-              className="flex gap-8 px-4"
-              animate={{
-                x: ["0%", "-33.333%"], // Since we tripled the list, we move 1/3 of the width
+              className="flex gap-8 px-4 cursor-grab active:cursor-grabbing"
+              animate={isPaused || isDragging ? {} : {
+                x: ["0%", "-33.333%"],
               }}
+              drag="x"
+              dragConstraints={{ left: -5000, right: 5000 }} // Large constraints for free movement
+              onDragStart={() => setIsDragging(true)}
+              onDragEnd={() => setIsDragging(false)}
               transition={{
                 duration: 60,
                 repeat: Infinity,
                 ease: "linear",
               }}
-              whileHover={{ transition: { duration: 120 } }} // Slow down on hover
+              whileHover={{ transition: { duration: 120 } }}
             >
               {marqueeProjects.map((p, i) => (
                 <div
@@ -693,14 +699,24 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
           </div>
           
           
-          <div className="mt-16 flex justify-center opacity-40 hover:opacity-100 transition-opacity">
-             <div className="flex items-center gap-4 py-2 px-6 rounded-full border border-foreground/5 bg-foreground/[0.02]">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <p className="text-[9px] uppercase tracking-[0.4em] text-foreground/60 font-bold">
-                   Infinite Rolling Billboard — Click to Explore
-                </p>
-             </div>
-          </div>
+           <div className="mt-16 flex flex-col items-center gap-6">
+              <div className="flex items-center gap-3">
+                 <button 
+                  onClick={() => setIsPaused(!isPaused)}
+                  className="flex items-center justify-center size-10 rounded-full border border-foreground/10 bg-foreground/5 hover:bg-foreground/10 transition-colors"
+                  aria-label={isPaused ? "Play" : "Pause"}
+                 >
+                   {isPaused ? <Play className="size-4 fill-current" /> : <Pause className="size-4 fill-current" />}
+                 </button>
+                 
+                 <div className="flex items-center gap-4 py-2 px-6 rounded-full border border-foreground/5 bg-foreground/[0.02] opacity-40 hover:opacity-100 transition-opacity">
+                    <div className={`w-2 h-2 rounded-full bg-primary ${isPaused ? '' : 'animate-pulse'}`} />
+                    <p className="text-[9px] uppercase tracking-[0.4em] text-foreground/60 font-bold">
+                       {isPaused ? "Paused — Drag to Explore" : "Infinite Rolling — Drag to Override"}
+                    </p>
+                 </div>
+              </div>
+           </div>
         </div>
       )}
 
