@@ -690,9 +690,6 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
             </motion.div>
           </div>
           
-          {/* Liquid Gradient Edges */}
-          <div className="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-background via-background/60 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-background via-background/60 to-transparent z-10 pointer-events-none" />
           
           <div className="mt-16 flex justify-center opacity-40 hover:opacity-100 transition-opacity">
              <div className="flex items-center gap-4 py-2 px-6 rounded-full border border-foreground/5 bg-foreground/[0.02]">
