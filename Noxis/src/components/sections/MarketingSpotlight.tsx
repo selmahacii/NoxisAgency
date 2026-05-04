@@ -58,7 +58,7 @@ export function MarketingSpotlight() {
               className="space-y-4"
             >
               <h2 className="text-white text-5xl md:text-8xl uppercase tracking-widest font-light opacity-80">
-                P Atelier
+                 Atelier
               </h2>
               <p className="text-[#C2A98A] text-sm uppercase tracking-[0.5em] font-body font-medium">
                 The Science of Silence

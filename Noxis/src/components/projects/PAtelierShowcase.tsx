@@ -62,7 +62,7 @@ function Navbar() {
         isScrolled ? "bg-white/80 backdrop-blur-md py-4 shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="text-xl font-heading tracking-widest uppercase">P Atelier</div>
+      <div className="text-xl font-heading tracking-widest uppercase">Atelier</div>
       
       <div className="hidden md:flex gap-12 items-center text-[10px] uppercase tracking-[0.2em] font-medium">
         {["Home", "About", "Classes", "Book"].map((item) => (
@@ -175,7 +175,7 @@ function Philosophy() {
             transition={{ delay: 0.2 }}
             className="text-lg font-light leading-relaxed text-[#6B6B6B] max-w-lg"
           >
-            P Atelier is more than a studio. It is an editorial approach to fitness. 
+            Atelier is more than a studio. It is an editorial approach to fitness. 
             We believe in the beauty of controlled movement, the power of breath, 
             and the luxury of focused time. Our method combines classical Pilates 
             with modern physiological insights.
@@ -310,7 +310,7 @@ function Testimonials() {
   const [index, setIndex] = useState(0);
   const items = [
     { text: "The atmosphere here is unlike any other studio. It's a true retreat from the city noise. My practice has never been more focused.", author: "Elena R." },
-    { text: "Sophisticated, minimal, and highly professional. P Atelier has redefined my understanding of Pilates and body awareness.", author: "Marc L." },
+    { text: "Sophisticated, minimal, and highly professional.  Atelier has redefined my understanding of Pilates and body awareness.", author: "Marc L." },
     { text: "Every detail is considered. From the lighting to the equipment, it's a masterpiece of wellness design.", author: "Sophia V." },
   ];
 
@@ -384,7 +384,7 @@ function Footer() {
   return (
     <footer className="py-20 px-6 lg:px-16 border-t border-[#E3E1DC]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-        <div className="text-xl font-heading tracking-widest uppercase">P Atelier</div>
+        <div className="text-xl font-heading tracking-widest uppercase"> Atelier</div>
         
         <div className="flex gap-12 text-[10px] uppercase tracking-[0.2em] opacity-60">
           <a href="#" className="hover:text-[#C2A98A]">Instagram</a>
@@ -393,7 +393,7 @@ function Footer() {
         </div>
 
         <p className="text-[10px] uppercase tracking-widest opacity-40">
-          © 2026 P Atelier Pilates. All Rights Reserved.
+          © 2026  Atelier Pilates. All Rights Reserved.
         </p>
 
       </div>

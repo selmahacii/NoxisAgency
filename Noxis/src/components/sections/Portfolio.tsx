@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowUpRight, X } from "lucide-react";
-import { motion, AnimatePresence, useMotionValue } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/lib/i18n";
+
 import kahootVideo from "@/assets/Kahoot/IMG_5234.MP4";
 import kahootImg from "@/assets/Kahoot/image.png";
 import kahootG1 from "@/assets/Kahoot/image copy.png";
@@ -32,8 +33,6 @@ import noraFurnitureG3 from "@/assets/NoraFurniture/image copy 3.png";
 import noraFurnitureG4 from "@/assets/NoraFurniture/image copy 4.png";
 import noraFurnitureG5 from "@/assets/NoraFurniture/image copy 5.png";
 import noraFurnitureG6 from "@/assets/NoraFurniture/image copy 6.png";
-
-
 
 import elMalikaVideo from "@/assets/Elmalika/Elmalika.mp4";
 import elMalikaImg from "@/assets/Elmalika/image.png";
@@ -138,8 +137,6 @@ import pAtelierG2 from "@/assets/pAtelierpilates/image copy 2.png";
 import pAtelierG3 from "@/assets/pAtelierpilates/image copy 3.png";
 import pAtelierG4 from "@/assets/pAtelierpilates/image copy 4.png";
 
-
-
 export interface Project {
   id: string;
   title: string;
@@ -163,7 +160,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "p-atelier-pilates",
-    title: "P Atelier Pilates",
+    title: "Atelier Pilates",
     category: "Luxury Wellness — Pilates Studio",
     year: "2026",
     client: "P Atelier",
@@ -225,27 +222,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "maison-orelie",
-    title: "Maison Orélie",
-    category: "Haute Couture — E-commerce",
-    year: "2025",
-    client: "Maison Orélie Paris",
-    duration: "14 semaines",
-    image: maisonOrelieImg,
-    video: maisonOrelieVideo,
-    gallery: [maisonOrelieImg, maisonOrelieG1, maisonOrelieG2, maisonOrelieG3, maisonOrelieG4, maisonOrelieG5],
-    summary: "Flagship numérique pour une maison de mode parisienne de luxe.",
-    challenge: "Créer une expérience numérique qui reflète l'exclusivité et le savoir-faire de leur boutique physique tout en maintenant des taux de conversion élevés.",
-    description: "Une solution de commerce headless avec storytelling cinématographique, visualisation de produits en 3D immersive et un processus de paiement mondial fluide.",
-    services: ["Branding de Luxe", "Stratégie UX", "Commerce Headless"],
-    stack: ["Next.js", "Shopify Hydrogen", "Three.js", "Sanity"],
-    results: [
-      { label: "Conversion", value: "+52%" },
-      { label: "Panier Moyen", value: "+40%" },
-      { label: "Engagement", value: "x3" },
-    ],
-  },
-  {
     id: "nora-furniture",
     title: "Nora Furniture",
     category: "Décoration — Design d'Intérieur",
@@ -288,32 +264,11 @@ export const projects: Project[] = [
     onlyWorkPage: true,
   },
   {
-    id: "furnispace",
-    title: "FurniSpace",
-    category: "E-commerce — Mobilier 3D",
-    year: "2024",
-    client: "FurniSpace Global",
-    duration: "12 semaines",
-    image: furniSpaceImg,
-    video: furniSpaceVideo,
-    gallery: [furniSpaceImg],
-    summary: "Plateforme immersive de vente de mobilier avec rendu haute fidélité.",
-    challenge: "Créer une expérience d'achat immersive pour du mobilier haut de gamme avec visualisation spatiale et fluidité extrême.",
-    description: "Noxis a développé une plateforme e-commerce innovante mettant l'accent sur le rendu visuel. L'interface minimaliste laisse place aux produits, tandis qu'une infrastructure backend solide gère des milliers de références en temps réel.",
-    services: ["Design UI/UX", "E-commerce Performance", "Motion Design"],
-    stack: ["Next.js", "Three.js", "Tailwind CSS", "Sanity"],
-    results: [
-      { label: "Engagement", value: "+85%" },
-      { label: "Conversion", value: "+30%" },
-      { label: "Vitesse", value: "98/100" },
-    ],
-  },
-  {
     id: "fisc-algerie",
-    title: "Fisc Algérie",
+    title: "FiscAlgérie",
     category: "Fintech — Dashboard de Gestion",
     year: "2025",
-    client: "Fisc Algérie",
+    client: "FiscAlgérie",
     duration: "16 semaines",
     image: fiscAlgerieImg,
     gallery: [fiscAlgerieImg, fiscAlgerieG1, fiscAlgerieG2],
@@ -323,9 +278,9 @@ export const projects: Project[] = [
     services: ["Fintech Dashboard", "Architecture Cloud", "Sécurité de Données"],
     stack: ["React", "Go", "PostgreSQL", "Docker"],
     results: [
-      { label: "Précision", value: "100%" },
+      { label: "Précision", value: "95%" },
       { label: "Gain Temps", value: "x4" },
-      { label: "Utilisateurs", value: "500+" },
+      { label: "Utilisateurs", value: "200+" },
     ],
     onlyWorkPage: true,
   },
@@ -335,12 +290,12 @@ export const projects: Project[] = [
     category: "SaaS — ERP & CRM Intelligent",
     year: "2025",
     client: "Eario.ai",
-    duration: "16 semaines",
+    duration: "15 semaines",
     image: earioImg,
     gallery: [earioImg, earioG1, earioG2, earioG3, earioG4, earioG5, earioG6, earioG7, earioG8, earioG9, earioG10, earioG11, earioG12, earioG13],
     summary: "Plateforme unifiée de gestion d’entreprise remplaçant la fragmentation des outils par un système intelligent centralisé.",
     challenge: "Supprimer la complexité des outils déconnectés (CRM, ERP, finance) en créant un hub opérationnel unique où chaque donnée circule en temps réel.",
-    description: "Eario.ai est structuré autour de 5 piliers : Sales Pipeline, Clients, Invoices, Inventory et Finance, avec une couche d'IA (Insights) pour les prévisions et recommandations business. La plateforme transforme les données brutes en actions concretes.",
+    description: "Eario.ai est structuré autour de 5 piliers : Sales Pipeline, Clients, Invoices, Inventory et Finance, avec une couche d'IA (Insights) pour les prévisions et recommandations business. La plateforme transforme les données brutes en actions concrètes.",
     services: ["Architecture SaaS", "Design UI/UX", "Intelligence Artificielle", "Gestion de Données"],
     stack: ["Next.js", "Python (AI)", "PostgreSQL", "Tailwind CSS"],
     results: [
@@ -392,6 +347,7 @@ export const projects: Project[] = [
       { label: "Temps Attente", value: "-70%" },
       { label: "Disponibilité", value: "99.9%" },
     ],
+    onlyWorkPage: true,
   },
   {
     id: "zenmed",
@@ -425,7 +381,7 @@ export const projects: Project[] = [
     gallery: [noxisLogisticsImg, noxisLogisticsG1, noxisLogisticsG2, noxisLogisticsG3, noxisLogisticsG4, noxisLogisticsG5, noxisLogisticsG6],
     summary: "Solution SaaS de gestion de flotte et de livraison dernier kilomètre optimisée pour le marché algérien.",
     challenge: "Gérer le suivi en temps réel des chauffeurs, l'optimisation des tournées et la réconciliation financière des paiements à la livraison (COD) à grande échelle.",
-    description: "Noxis Logistics est un système d'exploitation complet pour les prestataires de livraison. Il intègre un suivi GPS haute précision, un algorithme de routage intelligent et une passerelle de paiement automatisée pour BaridiMob et CIB.",
+    description: "Noxis Logistics est un système d'exploitation complet pour les prestataires de livraison. It intègre un suivi GPS haute précision, un algorithme de routage intelligent et une passerelle de paiement automatisée pour BaridiMob et CIB.",
     services: ["Architecture SaaS", "Optimisation Temps Réel", "Système de Paiement COD", "Fleet Tracking"],
     stack: ["React", "Node.js", "Redis", "Google Maps API", "PostgreSQL"],
     results: [
@@ -453,6 +409,7 @@ export const projects: Project[] = [
       { label: "Satisfaction", value: "4.8/5" },
       { label: "Transparence", value: "100%" },
     ],
+    onlyWorkPage: true,
   },
   {
     id: "atlas-banking",
@@ -484,7 +441,7 @@ export const projects: Project[] = [
     image: meridianImg,
     summary: "Retail Intelligence Platform pour la grande distribution algérienne.",
     challenge: "Optimiser la supply chain et le parcours client en magasin via l'IoT et l'IA prédictive.",
-    description: "Cartographie 3D interactive avec overlay de heatmaps. Analyse du trafic par Computer Vision et forecasting intelligent des ruptures de stock.",
+    description: "Cartographie 3D interactive with overlay of heatmaps. Analyse du trafic par Computer Vision et forecasting intelligent des ruptures de stock.",
     services: ["IoT Distribution", "Computer Vision", "IA Prédictive"],
     stack: ["Python", "Three.js", "MQTT", "TensorFlow"],
     results: [
@@ -493,6 +450,7 @@ export const projects: Project[] = [
       { label: "Insight", value: "Temps Réel" },
     ],
     isConcept: true,
+    onlyWorkPage: true,
   },
   {
     id: "sahara-data",
@@ -512,6 +470,7 @@ export const projects: Project[] = [
       { label: "Mise à jour", value: "Auto" },
       { label: "Portée", value: "Nationale" },
     ],
+    onlyWorkPage: true,
     isConcept: true,
   },
 ];
@@ -540,12 +499,112 @@ export const hiddenProjects: Project[] = [
   },
 ];
 
+function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isHovered) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0;
+      }
+    }
+  }, [isHovered]);
+
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group relative liquid-glass rounded-[2rem] overflow-hidden text-left w-full block transition-all duration-700 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-3"
+    >
+      <div className="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden">
+        {/* Static Image */}
+        <motion.img
+          src={p.image}
+          alt={p.title}
+          loading="lazy"
+          animate={{ scale: isHovered ? 1.1 : 1, opacity: isHovered && p.video ? 0 : 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Video Reveal on Hover */}
+        {p.video && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <video
+              ref={videoRef}
+              src={p.video}
+              poster={p.image}
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover scale-110"
+            />
+          </motion.div>
+        )}
+
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700" />
+        
+        {/* Top Right Action Button */}
+        <div className="absolute top-8 right-8 liquid-glass-strong rounded-full w-14 h-14 flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+          <ArrowUpRight className="h-6 w-6 text-foreground" />
+        </div>
+        
+        {/* Content Info */}
+        <div className="absolute bottom-0 left-0 right-0 p-10 pt-24 bg-gradient-to-t from-background via-background/40 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+          <motion.div 
+             animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0.6 }}
+             className="text-[10px] uppercase tracking-[0.4em] text-primary font-body mb-4 font-bold"
+          >
+            {p.category}
+          </motion.div>
+          <h3 className="text-4xl md:text-5xl font-heading italic text-foreground leading-none tracking-tight">
+            {p.title}
+          </h3>
+          
+          <div className="mt-8 flex items-center gap-6 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100 translate-y-4 group-hover:translate-y-0">
+             <div className="flex flex-col">
+               <span className="text-[9px] uppercase tracking-widest text-foreground/30 font-body mb-1">Year</span>
+               <span className="text-xs uppercase tracking-widest text-foreground/60 font-body">{p.year}</span>
+             </div>
+             <div className="h-8 w-px bg-foreground/10" />
+             <div className="flex flex-col">
+               <span className="text-[9px] uppercase tracking-widest text-foreground/30 font-body mb-1">Client</span>
+               <span className="text-xs uppercase tracking-widest text-foreground/60 font-body">{p.client}</span>
+             </div>
+          </div>
+        </div>
+        
+        {/* Concept Badge */}
+        {p.isConcept && (
+          <div className="absolute top-8 left-8">
+            <span className="bg-primary/90 text-primary-foreground text-[10px] uppercase tracking-[0.3em] font-bold px-5 py-2 rounded-full backdrop-blur-xl shadow-lg">
+              Concept Studio
+            </span>
+          </div>
+        )}
+      </div>
+    </button>
+  );
+}
 
 export function Portfolio({ showAll = false }: { showAll?: boolean }) {
   const [active, setActive] = useState<Project | null>(null);
   const [enlarge, setEnlarge] = useState<string | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const { t } = useI18n();
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   // Reset gallery index when changing project
   useEffect(() => {
@@ -569,82 +628,76 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
   // Auto-play gallery
   useEffect(() => {
     if (!active || !active.gallery || active.gallery.length <= 1) return;
-    
+
     const interval = setInterval(() => {
       setGalleryIndex((prev) => (prev + 1) % active.gallery!.length);
     }, 4000);
-    
+
     return () => clearInterval(interval);
   }, [active]);
 
   return (
-    <section className="px-6 lg:px-16 py-32 max-w-screen-2xl mx-auto">
+    <section className="px-6 lg:px-16 py-32 max-w-screen-2xl mx-auto overflow-hidden">
       <Reveal>
-        <div className="text-center mb-16">
-          <div className="liquid-glass inline-block rounded-full px-3.5 py-1 text-xs font-medium text-foreground font-body mb-6">
+        <div className="text-center mb-24">
+          <div className="liquid-glass inline-block rounded-full px-5 py-1.5 text-[10px] uppercase tracking-[0.2em] font-bold text-foreground font-body mb-8 border border-foreground/5 shadow-sm">
             {t("portfolio.badge")}
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-foreground tracking-tight leading-[0.9]">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading italic text-foreground tracking-tighter leading-[0.85] mb-8">
             {t("portfolio.title")}
           </h2>
-          <p className="text-foreground/60 font-body font-light text-base max-w-xl mx-auto mt-6">
+          <p className="text-foreground/50 font-body font-light text-lg max-w-2xl mx-auto leading-relaxed">
             {t("portfolio.subtitle")}
           </p>
         </div>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.filter(p => showAll || !p.onlyWorkPage).map((p, i) => (
-          <Reveal key={p.id} delay={i * 0.08}>
-            <button
-              onClick={() => setActive(p)}
-              className="group liquid-glass rounded-2xl overflow-hidden text-left w-full block"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                {p.video ? (
-                  <video
-                    src={p.video}
-                    poster={p.image}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                ) : (
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent pointer-events-none" />
-
-                <div className="absolute top-4 right-4 liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight className="h-4 w-4 text-foreground" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 pt-12 bg-gradient-to-t from-background/90 via-background/40 to-transparent">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 font-body mb-2">
-                    {p.category} · {p.year}
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-heading italic text-foreground leading-tight">
-                    {p.title}
-                  </h3>
-                </div>
-                {p.isConcept && (
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary/90 text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full backdrop-blur-sm">
-                      Concept Studio
-                    </span>
-                  </div>
-                )}
-              </div>
-            </button>
-          </Reveal>
-        ))}
-      </div>
+      {showAll ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {projects.filter(p => !p.onlyWorkPage || showAll).map((p, i) => (
+            <Reveal key={p.id} delay={i * 0.1}>
+              <ProjectCard p={p} onClick={() => setActive(p)} />
+            </Reveal>
+          ))}
+        </div>
+      ) : (
+        <div className="relative">
+          <motion.div
+            ref={carouselRef}
+            className="flex gap-8 overflow-x-auto pb-20 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory"
+            drag="x"
+            dragConstraints={{ right: 0, left: -2500 }} 
+            whileTap={{ cursor: "grabbing" }}
+          >
+            {projects.filter(p => !p.onlyWorkPage).map((p, i) => (
+              <motion.div
+                key={p.id}
+                initial={{ opacity: 0, scale: 0.9, x: 100 }}
+                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                className="flex-shrink-0 w-[90vw] sm:w-[500px] md:w-[650px] snap-center"
+              >
+                <ProjectCard p={p} onClick={() => setActive(p)} />
+              </motion.div>
+            ))}
+          </motion.div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4">
+             <span className="text-[10px] uppercase tracking-widest text-foreground/30 font-bold">Scroll</span>
+             <div className="w-48 h-px bg-foreground/10 relative overflow-hidden rounded-full">
+                <motion.div 
+                   className="absolute inset-0 bg-primary origin-left"
+                   initial={{ scaleX: 0 }}
+                   whileInView={{ scaleX: 1 }}
+                   transition={{ duration: 1.5, ease: "circOut" }}
+                />
+             </div>
+             <span className="text-[10px] uppercase tracking-widest text-foreground/30 font-bold">Explore</span>
+          </div>
+        </div>
+      )}
 
       <AnimatePresence>
         {active && (
@@ -656,23 +709,24 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
             onClick={() => setActive(null)}
           >
-            <div className="absolute inset-0 bg-background/90 backdrop-blur-md" />
+            <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" />
             <motion.div
-              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              initial={{ opacity: 0, y: 100, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 30, scale: 0.97 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              exit={{ opacity: 0, y: 100, scale: 0.9 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative liquid-glass rounded-3xl overflow-hidden max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-background"
+              className="relative liquid-glass rounded-[2.5rem] overflow-hidden max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-background shadow-[0_50px_100px_rgba(0,0,0,0.15)] border border-foreground/5"
             >
               <button
                 onClick={() => setActive(null)}
-                className="absolute top-4 right-4 z-10 liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center text-foreground"
+                className="absolute top-6 right-6 z-10 liquid-glass-strong rounded-full w-12 h-12 flex items-center justify-center text-foreground hover:scale-110 transition-transform"
                 aria-label="Close"
               >
-                <X className="h-4 w-4" />
+                <X className="h-5 w-5" />
               </button>
-              <div className="relative aspect-[16/9] overflow-hidden">
+              
+              <div className="relative aspect-video sm:aspect-[21/9] overflow-hidden">
                 {active.video ? (
                   <video
                     src={active.video}
@@ -688,24 +742,24 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                   <img src={active.image} alt={active.title} className="w-full h-full object-cover" />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="text-xs uppercase tracking-widest text-foreground/60 font-body mb-2">
-                    {active.category} · {active.year} · {active.client}
+                <div className="absolute bottom-0 left-0 right-0 p-12">
+                  <div className="text-xs uppercase tracking-[0.3em] text-foreground/50 font-body mb-4 font-semibold">
+                    {active.category} · {active.year}
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-heading italic text-foreground leading-tight">
+                  <h3 className="text-5xl md:text-7xl font-heading italic text-foreground leading-none tracking-tighter">
                     {active.title}
                   </h3>
-                  <div className="flex gap-4 mt-6">
+                  <div className="flex gap-4 mt-10">
                     {active.isConcept && (
-                      <span className="bg-primary text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">
+                      <span className="bg-primary text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-5 py-2 rounded-full shadow-lg">
                         Concept Studio
                       </span>
                     )}
                     {active.id === "p-atelier-pilates" && (
-                      <a 
-                        href="/work/p-atelier" 
-                        target="_blank" 
-                        className="bg-[#C2A98A] text-white text-[10px] uppercase tracking-widest font-bold px-6 py-2 rounded-full hover:bg-[#A78B6D] transition-colors"
+                      <a
+                        href="/work/p-atelier"
+                        target="_blank"
+                        className="bg-[#C2A98A] text-white text-[10px] uppercase tracking-widest font-bold px-8 py-3 rounded-full hover:bg-[#A78B6D] transition-all hover:scale-105 shadow-lg"
                       >
                         View Live Prototype
                       </a>
@@ -714,41 +768,41 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                 </div>
               </div>
 
-              <div className="p-8 md:p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16">
+              <div className="p-10 md:p-16">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-24">
                   {/* Left Column: Story & Media */}
-                  <div className="lg:col-span-2 space-y-12">
+                  <div className="lg:col-span-2 space-y-16">
                     {/* Metadata Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-foreground/5 pb-16">
                       {[
                         { l: t("portfolio.client"), v: active.client },
                         { l: t("portfolio.year"), v: active.year },
                         { l: t("portfolio.duration"), v: active.duration },
                         { l: t("portfolio.category"), v: active.category },
                       ].map((m) => (
-                        <div key={m.l} className="space-y-1">
-                          <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/40 font-body">{m.l}</div>
+                        <div key={m.l} className="space-y-2">
+                          <div className="text-[9px] uppercase tracking-[0.2em] text-foreground/30 font-body font-bold">{m.l}</div>
                           <div className="text-foreground font-body text-sm font-medium">{m.v}</div>
                         </div>
                       ))}
                     </div>
 
                     {/* Brief Sections */}
-                    <div className="space-y-10">
-                      <div className="space-y-4">
-                        <h4 className="text-sm uppercase tracking-widest text-primary font-body font-semibold">
+                    <div className="space-y-16">
+                      <div className="space-y-6">
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-primary font-body font-bold">
                           01 / Le Défi
                         </h4>
-                        <p className="text-xl md:text-2xl font-heading italic text-foreground leading-snug">
+                        <p className="text-3xl md:text-5xl font-heading italic text-foreground leading-[1.1] tracking-tight">
                           {active.challenge}
                         </p>
                       </div>
 
-                      <div className="space-y-4">
-                        <h4 className="text-sm uppercase tracking-widest text-primary font-body font-semibold">
-                          02 / Ce qu'on a livré
+                      <div className="space-y-6">
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-primary font-body font-bold">
+                          02 / L'Approche
                         </h4>
-                        <p className="text-foreground/70 font-body font-light text-base md:text-lg leading-relaxed">
+                        <p className="text-foreground/70 font-body font-light text-lg md:text-xl leading-relaxed max-w-3xl">
                           {active.description}
                         </p>
                       </div>
@@ -756,11 +810,11 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
 
                     {/* Video Demo Section */}
                     {active.video && (
-                      <div className="space-y-4">
-                        <h4 className="text-sm uppercase tracking-widest text-primary font-body font-semibold">
-                          03 / Démo
+                      <div className="space-y-8">
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-primary font-body font-bold">
+                          03 / Immersion
                         </h4>
-                        <div className="liquid-glass rounded-3xl overflow-hidden aspect-video border border-foreground/5 shadow-2xl">
+                        <div className="liquid-glass rounded-[2rem] overflow-hidden aspect-video border border-foreground/5 shadow-2xl">
                           <video
                             src={active.video}
                             controls
@@ -776,48 +830,51 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
 
                     {/* Gallery Section */}
                     {active.gallery && active.gallery.length > 0 && (
-                      <div className="space-y-6 pt-6">
-                        <div className="flex justify-between items-center">
-                          <h4 className="text-sm uppercase tracking-widest text-foreground/40 font-body">Galerie</h4>
-                          <div className="flex gap-1.5">
+                      <div className="space-y-8 pt-8">
+                        <div className="flex justify-between items-end">
+                          <div className="space-y-2">
+                            <h4 className="text-[10px] uppercase tracking-[0.4em] text-primary font-body font-bold">04 / Artefacts</h4>
+                            <p className="text-sm text-foreground/40 font-body">Sélection visuelle du projet</p>
+                          </div>
+                          <div className="flex gap-2 mb-2">
                             {active.gallery.map((_, i) => (
-                              <div 
-                                key={i} 
-                                className={`h-1 rounded-full transition-all duration-500 ${i === galleryIndex ? 'w-4 bg-primary' : 'w-1 bg-foreground/10'}`}
+                              <div
+                                key={i}
+                                className={`h-1 rounded-full transition-all duration-700 ${i === galleryIndex ? 'w-8 bg-primary' : 'w-2 bg-foreground/10'}`}
                               />
                             ))}
                           </div>
                         </div>
                         <div className="relative overflow-hidden cursor-grab active:cursor-grabbing">
                           <motion.div
-                            className="flex gap-4"
-                            animate={{ x: `-${galleryIndex * 75}%` }}
-                            transition={{ type: "spring", stiffness: 150, damping: 25 }}
+                            className="flex gap-6"
+                            animate={{ x: `-${galleryIndex * 80}%` }}
+                            transition={{ type: "spring", stiffness: 120, damping: 25 }}
                             drag="x"
-                            dragConstraints={{ left: -1000, right: 0 }}
+                            dragConstraints={{ left: -2000, right: 0 }}
                             onDragEnd={(_, info) => {
-                              if (info.offset.x < -50 && galleryIndex < (active.gallery?.length || 1) - 1) {
+                              if (info.offset.x < -100 && galleryIndex < (active.gallery?.length || 1) - 1) {
                                 setGalleryIndex(prev => prev + 1);
-                              } else if (info.offset.x > 50 && galleryIndex > 0) {
+                              } else if (info.offset.x > 100 && galleryIndex > 0) {
                                 setGalleryIndex(prev => prev - 1);
                               }
                             }}
                           >
                             {active.gallery.map((g, i) => (
-                              <motion.div 
-                                key={i} 
-                                className="flex-[0_0_85%] sm:flex-[0_0_70%] min-w-0"
+                              <motion.div
+                                key={i}
+                                className="flex-[0_0_90%] sm:flex-[0_0_80%] min-w-0"
                                 whileTap={{ scale: 0.98 }}
                               >
                                 <button
                                   onClick={() => setEnlarge(g)}
-                                  className="group/gallery liquid-glass rounded-2xl overflow-hidden aspect-[16/10] relative cursor-zoom-in w-full block"
+                                  className="group/gallery liquid-glass rounded-[1.5rem] overflow-hidden aspect-[16/10] relative cursor-zoom-in w-full block border border-foreground/5"
                                 >
                                   <img
                                     src={g}
                                     alt={`${active.title} ${i + 1}`}
                                     loading="lazy"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover/gallery:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover/gallery:scale-105"
                                   />
                                   <div className="absolute inset-0 bg-white/0 group-hover/gallery:bg-white/5 transition-colors duration-500" />
                                 </button>
@@ -830,40 +887,40 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                   </div>
 
                   {/* Right Column: Stats & Tech */}
-                  <div className="space-y-12">
+                  <div className="space-y-16">
                     {/* Stats Grid */}
-                    <div className="space-y-4">
-                      <h4 className="text-sm uppercase tracking-widest text-foreground/40 font-body">Résultats</h4>
-                      <div className="space-y-6">
+                    <div className="space-y-8">
+                      <h4 className="text-[10px] uppercase tracking-[0.4em] text-foreground/30 font-body font-bold">Performance</h4>
+                      <div className="space-y-8">
                         {active.results.map((r) => (
-                          <div key={r.label} className="border-b border-foreground/10 pb-4 last:border-0 transition-colors">
-                            <div className="text-4xl font-heading italic text-foreground leading-none mb-2">
+                          <div key={r.label} className="group border-b border-foreground/5 pb-8 last:border-0 transition-all hover:translate-x-2">
+                            <div className="text-5xl md:text-6xl font-heading italic text-foreground leading-none mb-3 group-hover:text-primary transition-colors">
                               {r.value}
                             </div>
-                            <div className="text-foreground/40 font-body font-light text-[10px] uppercase tracking-[0.2em]">{r.label}</div>
+                            <div className="text-foreground/40 font-body font-medium text-[9px] uppercase tracking-[0.3em]">{r.label}</div>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Services & Stack */}
-                    <div className="space-y-8">
-                      <div className="space-y-4">
-                        <h4 className="text-sm uppercase tracking-widest text-foreground/40 font-body">Services</h4>
+                    <div className="space-y-12">
+                      <div className="space-y-6">
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-foreground/30 font-body font-bold">Savoir-faire</h4>
                         <div className="flex flex-wrap gap-2">
                           {active.services.map((s) => (
-                            <span key={s} className="bg-foreground/5 text-foreground/70 rounded-full px-4 py-1.5 text-xs font-medium font-body border border-foreground/5">
+                            <span key={s} className="bg-foreground/[0.03] text-foreground/70 rounded-full px-5 py-2 text-xs font-medium font-body border border-foreground/5 hover:bg-foreground/5 transition-colors">
                               {s}
                             </span>
                           ))}
                         </div>
                       </div>
 
-                      <div className="space-y-4">
-                        <h4 className="text-sm uppercase tracking-widest text-foreground/40 font-body">Stack</h4>
+                      <div className="space-y-6">
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-foreground/30 font-body font-bold">Technologies</h4>
                         <div className="flex flex-wrap gap-2">
                           {active.stack.map((s) => (
-                            <span key={s} className="bg-primary/5 text-primary rounded-full px-4 py-1.5 text-xs font-medium font-body border border-primary/10">
+                            <span key={s} className="bg-primary/[0.03] text-primary rounded-full px-5 py-2 text-xs font-semibold font-body border border-primary/5 hover:bg-primary/[0.07] transition-colors">
                               {s}
                             </span>
                           ))}
@@ -884,22 +941,22 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12 bg-black/95 backdrop-blur-xl cursor-zoom-out"
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12 bg-black/98 backdrop-blur-3xl cursor-zoom-out"
             onClick={() => setEnlarge(null)}
           >
             <button
-              className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors"
+              className="absolute top-8 right-8 text-white/40 hover:text-white transition-colors"
               onClick={() => setEnlarge(null)}
             >
-              <X className="h-8 w-8" />
+              <X className="h-10 w-10" />
             </button>
             <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 30, stiffness: 200 }}
               src={enlarge}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              className="max-w-full max-h-full object-contain rounded-2xl shadow-[0_0_100px_rgba(0,0,0,0.5)]"
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>
