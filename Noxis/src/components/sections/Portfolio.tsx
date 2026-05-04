@@ -381,7 +381,7 @@ export const projects: Project[] = [
     gallery: [noxisLogisticsImg, noxisLogisticsG1, noxisLogisticsG2, noxisLogisticsG3, noxisLogisticsG4, noxisLogisticsG5, noxisLogisticsG6],
     summary: "Solution SaaS de gestion de flotte et de livraison dernier kilomètre optimisée pour le marché algérien.",
     challenge: "Gérer le suivi en temps réel des chauffeurs, l'optimisation des tournées et la réconciliation financière des paiements à la livraison (COD) à grande échelle.",
-    description: "Noxis Logistics est un système d'exploitation complet pour les prestataires de livraison. It intègre un suivi GPS haute précision, un algorithme de routage intelligent et une passerelle de paiement automatisée pour BaridiMob et CIB.",
+    description: "Noxis Logistics est un système d'exploitation complet pour les prestataires de livraison. Il intègre un suivi GPS haute précision, un algorithme de routage intelligent et une passerelle de paiement automatisée pour BaridiMob et CIB.",
     services: ["Architecture SaaS", "Optimisation Temps Réel", "Système de Paiement COD", "Fleet Tracking"],
     stack: ["React", "Node.js", "Redis", "Google Maps API", "PostgreSQL"],
     results: [
@@ -604,7 +604,6 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
   const [enlarge, setEnlarge] = useState<string | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const { t } = useI18n();
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   // Reset gallery index when changing project
   useEffect(() => {
@@ -636,6 +635,10 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
     return () => clearInterval(interval);
   }, [active]);
 
+  const filteredProjects = projects.filter(p => !p.onlyWorkPage);
+  // Duplicate for infinite marquee
+  const marqueeProjects = [...filteredProjects, ...filteredProjects, ...filteredProjects];
+
   return (
     <section className="px-6 lg:px-16 py-32 max-w-screen-2xl mx-auto overflow-hidden">
       <Reveal>
@@ -661,40 +664,43 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
           ))}
         </div>
       ) : (
-        <div className="relative">
-          <motion.div
-            ref={carouselRef}
-            className="flex gap-8 overflow-x-auto pb-20 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory"
-            drag="x"
-            dragConstraints={{ right: 0, left: -2500 }} 
-            whileTap={{ cursor: "grabbing" }}
-          >
-            {projects.filter(p => !p.onlyWorkPage).map((p, i) => (
-              <motion.div
-                key={p.id}
-                initial={{ opacity: 0, scale: 0.9, x: 100 }}
-                whileInView={{ opacity: 1, scale: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="flex-shrink-0 w-[90vw] sm:w-[500px] md:w-[650px] snap-center"
-              >
-                <ProjectCard p={p} onClick={() => setActive(p)} />
-              </motion.div>
-            ))}
-          </motion.div>
+        <div className="relative -mx-6 lg:-mx-16">
+          {/* Main Scrolling Container */}
+          <div className="flex overflow-hidden group">
+            <motion.div
+              className="flex gap-8 px-4"
+              animate={{
+                x: ["0%", "-33.333%"], // Since we tripled the list, we move 1/3 of the width
+              }}
+              transition={{
+                duration: 60,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              whileHover={{ transition: { duration: 120 } }} // Slow down on hover
+            >
+              {marqueeProjects.map((p, i) => (
+                <div
+                  key={`${p.id}-${i}`}
+                  className="flex-shrink-0 w-[85vw] sm:w-[500px] md:w-[650px]"
+                >
+                  <ProjectCard p={p} onClick={() => setActive(p)} />
+                </div>
+              ))}
+            </motion.div>
+          </div>
           
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4">
-             <span className="text-[10px] uppercase tracking-widest text-foreground/30 font-bold">Scroll</span>
-             <div className="w-48 h-px bg-foreground/10 relative overflow-hidden rounded-full">
-                <motion.div 
-                   className="absolute inset-0 bg-primary origin-left"
-                   initial={{ scaleX: 0 }}
-                   whileInView={{ scaleX: 1 }}
-                   transition={{ duration: 1.5, ease: "circOut" }}
-                />
+          {/* Liquid Gradient Edges */}
+          <div className="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-background via-background/60 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-background via-background/60 to-transparent z-10 pointer-events-none" />
+          
+          <div className="mt-16 flex justify-center opacity-40 hover:opacity-100 transition-opacity">
+             <div className="flex items-center gap-4 py-2 px-6 rounded-full border border-foreground/5 bg-foreground/[0.02]">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <p className="text-[9px] uppercase tracking-[0.4em] text-foreground/60 font-bold">
+                   Infinite Rolling Billboard — Click to Explore
+                </p>
              </div>
-             <span className="text-[10px] uppercase tracking-widest text-foreground/30 font-bold">Explore</span>
           </div>
         </div>
       )}
