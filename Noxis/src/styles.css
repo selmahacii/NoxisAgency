@@ -81,11 +81,9 @@
 
 @layer components {
   .liquid-glass {
-    background: rgba(31, 31, 31, 0.03);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: transparent;
     border: none;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(0, 0, 0, 0.02);
+    box-shadow: none;
     position: relative;
     overflow: hidden;
   }
@@ -123,16 +121,6 @@
   .animate-blob-slow { animation: blob-slow 18s ease-in-out infinite; }
   .animate-blob-slower { animation: blob-slower 24s ease-in-out infinite; }
 
-  .liquid-glass-strong {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    border: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04),
-      inset 0 1px 1px rgba(255, 255, 255, 1);
-    position: relative;
-    overflow: hidden;
-  }
   .liquid-glass-strong::before {
     content: '';
     position: absolute;
