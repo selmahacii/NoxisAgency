@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, X, Play, Pause } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/lib/i18n";
@@ -596,8 +596,7 @@ function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
             </span>
           </div>
         )}
-      </div>
-    </button>
+     </button>
   );
 }
 
