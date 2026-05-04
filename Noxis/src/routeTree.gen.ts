@@ -14,6 +14,8 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkPAtelierRouteImport } from './routes/work.p-atelier'
+import { Route as MarketingPAtelierRouteImport } from './routes/marketing.p-atelier'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -40,20 +42,34 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkPAtelierRoute = WorkPAtelierRouteImport.update({
+  id: '/p-atelier',
+  path: '/p-atelier',
+  getParentRoute: () => WorkRoute,
+} as any)
+const MarketingPAtelierRoute = MarketingPAtelierRouteImport.update({
+  id: '/marketing/p-atelier',
+  path: '/marketing/p-atelier',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
+  '/marketing/p-atelier': typeof MarketingPAtelierRoute
+  '/work/p-atelier': typeof WorkPAtelierRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
+  '/marketing/p-atelier': typeof MarketingPAtelierRoute
+  '/work/p-atelier': typeof WorkPAtelierRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,14 +77,38 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
+  '/marketing/p-atelier': typeof MarketingPAtelierRoute
+  '/work/p-atelier': typeof WorkPAtelierRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/process' | '/services' | '/work'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/process'
+    | '/services'
+    | '/work'
+    | '/marketing/p-atelier'
+    | '/work/p-atelier'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/process' | '/services' | '/work'
-  id: '__root__' | '/' | '/contact' | '/process' | '/services' | '/work'
+  to:
+    | '/'
+    | '/contact'
+    | '/process'
+    | '/services'
+    | '/work'
+    | '/marketing/p-atelier'
+    | '/work/p-atelier'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/process'
+    | '/services'
+    | '/work'
+    | '/marketing/p-atelier'
+    | '/work/p-atelier'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,7 +116,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ProcessRoute: typeof ProcessRoute
   ServicesRoute: typeof ServicesRoute
-  WorkRoute: typeof WorkRoute
+  WorkRoute: typeof WorkRouteWithChildren
+  MarketingPAtelierRoute: typeof MarketingPAtelierRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,15 +157,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/p-atelier': {
+      id: '/work/p-atelier'
+      path: '/p-atelier'
+      fullPath: '/work/p-atelier'
+      preLoaderRoute: typeof WorkPAtelierRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/marketing/p-atelier': {
+      id: '/marketing/p-atelier'
+      path: '/marketing/p-atelier'
+      fullPath: '/marketing/p-atelier'
+      preLoaderRoute: typeof MarketingPAtelierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
+
+interface WorkRouteChildren {
+  WorkPAtelierRoute: typeof WorkPAtelierRoute
+}
+
+const WorkRouteChildren: WorkRouteChildren = {
+  WorkPAtelierRoute: WorkPAtelierRoute,
+}
+
+const WorkRouteWithChildren = WorkRoute._addFileChildren(WorkRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ProcessRoute: ProcessRoute,
   ServicesRoute: ServicesRoute,
-  WorkRoute: WorkRoute,
+  WorkRoute: WorkRouteWithChildren,
+  MarketingPAtelierRoute: MarketingPAtelierRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

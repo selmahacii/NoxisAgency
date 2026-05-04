@@ -131,6 +131,13 @@ import atlasImg from "@/assets/concepts/atlas.png";
 import meridianImg from "@/assets/concepts/meridian.png";
 import saharaImg from "@/assets/concepts/sahara.png";
 
+import pAtelierVideo from "@/assets/pAtelierpilates/Screen Video (35).mp4";
+import pAtelierImg from "@/assets/pAtelierpilates/image.png";
+import pAtelierG1 from "@/assets/pAtelierpilates/image copy.png";
+import pAtelierG2 from "@/assets/pAtelierpilates/image copy 2.png";
+import pAtelierG3 from "@/assets/pAtelierpilates/image copy 3.png";
+import pAtelierG4 from "@/assets/pAtelierpilates/image copy 4.png";
+
 
 
 export interface Project {
@@ -154,6 +161,27 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "p-atelier-pilates",
+    title: "P Atelier Pilates",
+    category: "Luxury Wellness — Pilates Studio",
+    year: "2026",
+    client: "P Atelier",
+    duration: "4 semaines",
+    image: pAtelierImg,
+    video: pAtelierVideo,
+    gallery: [pAtelierImg, pAtelierG1, pAtelierG2, pAtelierG3, pAtelierG4],
+    summary: "Prototype de site web premium pour un studio de Pilates, axé sur le luxe calme et le minimalisme.",
+    challenge: "Récréer l'expérience immersive d'un studio de Pilates haut de gamme à travers un mouvement fluide, une esthétique terreuse et une typographie éditoriale.",
+    description: "Une vitrine numérique haute fidélité avec une UX narrative, des animations sur mesure et une palette de couleurs soignée (blanc cassé chaud, sable). Le design privilégie l'espace et la clarté pour refléter la discipline et la sérénité du Pilates.",
+    services: ["Stratégie Digitale", "Design UI/UX", "Branding de Luxe", "Motion Design"],
+    stack: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
+    results: [
+      { label: "Esthétique", value: "Éditoriale" },
+      { label: "UX", value: "Immersive" },
+      { label: "Vitesse", value: "Optimisée" },
+    ],
+  },
   {
     id: "dar-al-malika",
     title: "Dar Al Malika",
@@ -312,7 +340,7 @@ export const projects: Project[] = [
     gallery: [earioImg, earioG1, earioG2, earioG3, earioG4, earioG5, earioG6, earioG7, earioG8, earioG9, earioG10, earioG11, earioG12, earioG13],
     summary: "Plateforme unifiée de gestion d’entreprise remplaçant la fragmentation des outils par un système intelligent centralisé.",
     challenge: "Supprimer la complexité des outils déconnectés (CRM, ERP, finance) en créant un hub opérationnel unique où chaque donnée circule en temps réel.",
-    description: "Eario.ai est structuré autour de 5 piliers : Sales Pipeline, Clients, Invoices, Inventory et Finance, avec une couche d'IA (Insights) pour les prévisions et recommandations business. La plateforme transforme les données brutes en actions concrètes.",
+    description: "Eario.ai est structuré autour de 5 piliers : Sales Pipeline, Clients, Invoices, Inventory et Finance, avec une couche d'IA (Insights) pour les prévisions et recommandations business. La plateforme transforme les données brutes en actions concretes.",
     services: ["Architecture SaaS", "Design UI/UX", "Intelligence Artificielle", "Gestion de Données"],
     stack: ["Next.js", "Python (AI)", "PostgreSQL", "Tailwind CSS"],
     results: [
@@ -667,13 +695,22 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                   <h3 className="text-4xl md:text-5xl font-heading italic text-foreground leading-tight">
                     {active.title}
                   </h3>
-                  {active.isConcept && (
-                    <div className="mt-4">
+                  <div className="flex gap-4 mt-6">
+                    {active.isConcept && (
                       <span className="bg-primary text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">
                         Concept Studio
                       </span>
-                    </div>
-                  )}
+                    )}
+                    {active.id === "p-atelier-pilates" && (
+                      <a 
+                        href="/work/p-atelier" 
+                        target="_blank" 
+                        className="bg-[#C2A98A] text-white text-[10px] uppercase tracking-widest font-bold px-6 py-2 rounded-full hover:bg-[#A78B6D] transition-colors"
+                      >
+                        View Live Prototype
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
 
