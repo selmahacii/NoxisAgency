@@ -561,30 +561,32 @@ function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
           <ArrowUpRight className="h-6 w-6 text-foreground" />
         </div>
         
-        {/* Content Info */}
-        <div className="absolute bottom-0 left-0 right-0 p-10 pt-24 translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-          <motion.div 
-             animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0.6 }}
-             className="text-[10px] uppercase tracking-[0.4em] text-primary font-body mb-4 font-bold"
-          >
-            {p.category}
-          </motion.div>
-          <h3 className="text-4xl md:text-5xl font-heading italic text-foreground leading-none tracking-tight">
-            {p.title}
-          </h3>
-          
-          <div className="mt-8 flex items-center gap-6 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100 translate-y-4 group-hover:translate-y-0">
-             <div className="flex flex-col">
-               <span className="text-[9px] uppercase tracking-widest text-foreground/30 font-body mb-1">Year</span>
-               <span className="text-xs uppercase tracking-widest text-foreground/60 font-body">{p.year}</span>
-             </div>
-             <div className="h-8 w-px bg-foreground/10" />
-             <div className="flex flex-col">
-               <span className="text-[9px] uppercase tracking-widest text-foreground/30 font-body mb-1">Client</span>
-               <span className="text-xs uppercase tracking-widest text-foreground/60 font-body">{p.client}</span>
-             </div>
-          </div>
+        {/* Content Info moved below for full visibility */}
+      </div>
+
+      <div className="p-10 pt-6">
+        <motion.div 
+           animate={{ y: isHovered ? 0 : 5, opacity: isHovered ? 1 : 0.8 }}
+           className="text-[10px] uppercase tracking-[0.4em] text-primary font-body mb-3 font-bold"
+        >
+          {p.category}
+        </motion.div>
+        <h3 className="text-3xl md:text-4xl font-heading italic text-foreground leading-none tracking-tight">
+          {p.title}
+        </h3>
+        
+        <div className="mt-6 flex items-center gap-6 opacity-60 group-hover:opacity-100 transition-all duration-700">
+           <div className="flex flex-col">
+             <span className="text-[9px] uppercase tracking-widest text-foreground/30 font-body mb-1">Year</span>
+             <span className="text-[10px] uppercase tracking-widest text-foreground/60 font-body">{p.year}</span>
+           </div>
+           <div className="h-6 w-px bg-foreground/10" />
+           <div className="flex flex-col">
+             <span className="text-[9px] uppercase tracking-widest text-foreground/30 font-body mb-1">Client</span>
+             <span className="text-[10px] uppercase tracking-widest text-foreground/60 font-body">{p.client}</span>
+           </div>
         </div>
+      </div>
         
         {/* Concept Badge */}
         {p.isConcept && (
@@ -729,7 +731,7 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                 <X className="h-5 w-5" />
               </button>
               
-              <div className="relative aspect-video sm:aspect-[21/9] overflow-hidden">
+              <div className="relative overflow-hidden bg-background/50">
                 {active.video ? (
                   <video
                     src={active.video}
@@ -739,35 +741,36 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                     muted
                     playsInline
                     preload="auto"
-                    className="w-full h-full object-cover"
+                    className="w-full object-cover"
                   />
                 ) : (
-                  <img src={active.image} alt={active.title} className="w-full h-full object-cover" />
+                  <img src={active.image} alt={active.title} className="w-full h-auto max-h-[70vh] object-contain mx-auto" />
                 )}
                 {/* Shade removed for full visibility */}
-                <div className="absolute bottom-0 left-0 right-0 p-12">
-                  <div className="text-xs uppercase tracking-[0.3em] text-foreground/50 font-body mb-4 font-semibold">
-                    {active.category} · {active.year}
-                  </div>
-                  <h3 className="text-5xl md:text-7xl font-heading italic text-foreground leading-none tracking-tighter">
-                    {active.title}
-                  </h3>
-                  <div className="flex gap-4 mt-10">
-                    {active.isConcept && (
-                      <span className="bg-primary text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-5 py-2 rounded-full shadow-lg">
-                        Concept Studio
-                      </span>
-                    )}
-                    {active.id === "p-atelier-pilates" && (
-                      <a
-                        href="/work/p-atelier"
-                        target="_blank"
-                        className="bg-[#C2A98A] text-white text-[10px] uppercase tracking-widest font-bold px-8 py-3 rounded-full hover:bg-[#A78B6D] transition-all hover:scale-105 shadow-lg"
-                      >
-                        View Live Prototype
-                      </a>
-                    )}
-                  </div>
+              </div>
+
+              <div className="p-12 pb-0">
+                <div className="text-xs uppercase tracking-[0.3em] text-foreground/50 font-body mb-4 font-semibold">
+                  {active.category} · {active.year}
+                </div>
+                <h3 className="text-5xl md:text-7xl font-heading italic text-foreground leading-none tracking-tighter">
+                  {active.title}
+                </h3>
+                <div className="flex gap-4 mt-10">
+                  {active.isConcept && (
+                    <span className="bg-primary text-primary-foreground text-[10px] uppercase tracking-widest font-bold px-5 py-2 rounded-full shadow-lg">
+                      Concept Studio
+                    </span>
+                  )}
+                  {active.id === "p-atelier-pilates" && (
+                    <a
+                      href="/work/p-atelier"
+                      target="_blank"
+                      className="bg-[#C2A98A] text-white text-[10px] uppercase tracking-widest font-bold px-8 py-3 rounded-full hover:bg-[#A78B6D] transition-all hover:scale-105 shadow-lg"
+                    >
+                      View Live Prototype
+                    </a>
+                  )}
                 </div>
               </div>
 
