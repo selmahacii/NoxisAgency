@@ -554,7 +554,7 @@ function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
         )}
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700" />
+        {/* Overlays removed for full visibility */}
         
         {/* Top Right Action Button */}
         <div className="absolute top-8 right-8 liquid-glass-strong rounded-full w-14 h-14 flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
@@ -562,7 +562,7 @@ function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
         </div>
         
         {/* Content Info */}
-        <div className="absolute bottom-0 left-0 right-0 p-10 pt-24 bg-gradient-to-t from-background via-background/40 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+        <div className="absolute bottom-0 left-0 right-0 p-10 pt-24 translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
           <motion.div 
              animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0.6 }}
              className="text-[10px] uppercase tracking-[0.4em] text-primary font-body mb-4 font-bold"
@@ -744,7 +744,7 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                 ) : (
                   <img src={active.image} alt={active.title} className="w-full h-full object-cover" />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+                {/* Shade removed for full visibility */}
                 <div className="absolute bottom-0 left-0 right-0 p-12">
                   <div className="text-xs uppercase tracking-[0.3em] text-foreground/50 font-body mb-4 font-semibold">
                     {active.category} · {active.year}
