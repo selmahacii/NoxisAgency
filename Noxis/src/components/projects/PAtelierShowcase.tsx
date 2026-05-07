@@ -59,7 +59,7 @@ function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 px-6 lg:px-16 py-6 flex justify-between items-center transition-all duration-500 ${
-        isScrolled ? "bg-white/80 backdrop-blur-md py-4 shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-white py-4 shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="text-xl font-heading tracking-widest uppercase">Atelier</div>
@@ -255,7 +255,7 @@ function Classes() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-white/90 backdrop-blur-sm text-[10px] uppercase tracking-widest px-6 py-3 rounded-full">View Details</span>
+                  <span className="bg-white text-[10px] uppercase tracking-widest px-6 py-3 rounded-full border border-foreground/5 shadow-sm">View Details</span>
                 </div>
               </div>
               <div className="flex justify-between items-start">

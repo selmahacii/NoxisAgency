@@ -729,7 +729,7 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
             onClick={() => setActive(null)}
           >
-            <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" />
+            <div className="absolute inset-0 bg-background" />
             <motion.div
               initial={{ opacity: 0, y: 100, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -962,7 +962,7 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12 bg-black/98 backdrop-blur-3xl cursor-zoom-out"
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12 bg-black cursor-zoom-out"
             onClick={() => setEnlarge(null)}
           >
             <button

@@ -111,7 +111,7 @@ export function ProjectPlanner({ isOpen, onClose }: ProjectPlannerProps) {
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
       >
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-xl" onClick={onClose} />
+        <div className="absolute inset-0 bg-background/95" onClick={onClose} />
         
         <motion.div
           initial={{ scale: 0.95, opacity: 0, y: 20 }}

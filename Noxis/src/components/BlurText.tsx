@@ -46,13 +46,12 @@ export function BlurText({
         <motion.span
           key={i}
           style={{ display: "inline-block", willChange: "transform, filter, opacity" }}
-          initial={{ filter: "blur(10px)", opacity: 0, y: fromY }}
+          initial={{ opacity: 0, y: fromY }}
           animate={
             inView
               ? {
-                  filter: ["blur(10px)", "blur(5px)", "blur(0px)"],
-                  opacity: [0, 0.5, 1],
-                  y: [fromY, -5, 0],
+                  opacity: 1,
+                  y: 0,
                 }
               : {}
           }
