@@ -519,7 +519,7 @@ function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative liquid-glass rounded-[2rem] overflow-hidden text-left w-full block transition-all duration-700 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-3"
+      className="group relative rounded-[2rem] overflow-hidden text-left w-full block transition-all duration-700 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-3 bg-white/5 border border-foreground/5"
     >
       <div className="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden">
         {/* Static Image */}
@@ -557,7 +557,7 @@ function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
         {/* Overlays removed for full visibility */}
         
         {/* Top Right Action Button */}
-        <div className="absolute top-8 right-8 liquid-glass-strong rounded-full w-14 h-14 flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+        <div className="absolute top-8 right-8 bg-white/90 rounded-full w-14 h-14 flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-500 shadow-xl border border-foreground/5">
           <ArrowUpRight className="h-6 w-6 text-foreground" />
         </div>
         
@@ -591,7 +591,7 @@ function ProjectCard({ p, onClick }: { p: Project; onClick: () => void }) {
         {/* Concept Badge */}
         {p.isConcept && (
           <div className="absolute top-8 left-8">
-            <span className="bg-primary/90 text-primary-foreground text-[10px] uppercase tracking-[0.3em] font-bold px-5 py-2 rounded-full backdrop-blur-xl shadow-lg">
+            <span className="bg-primary/90 text-primary-foreground text-[10px] uppercase tracking-[0.3em] font-bold px-5 py-2 rounded-full shadow-lg">
               Concept Studio
             </span>
           </div>
@@ -646,7 +646,7 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
     <section className="px-6 lg:px-16 py-32 max-w-screen-2xl mx-auto overflow-hidden">
       <Reveal>
         <div className="text-center mb-24">
-          <div className="liquid-glass inline-block rounded-full px-5 py-1.5 text-[10px] uppercase tracking-[0.2em] font-bold text-foreground font-body mb-8 border border-foreground/5 shadow-sm">
+          <div className="inline-block rounded-full px-5 py-1.5 text-[10px] uppercase tracking-[0.2em] font-bold text-foreground font-body mb-8 border border-foreground/10 bg-foreground/[0.03] shadow-sm">
             {t("portfolio.badge")}
           </div>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading italic text-foreground tracking-tighter leading-[0.85] mb-8">
@@ -835,7 +835,7 @@ export function Portfolio({ showAll = false }: { showAll?: boolean }) {
                         <h4 className="text-[10px] uppercase tracking-[0.4em] text-primary font-body font-bold">
                           03 / Immersion
                         </h4>
-                        <div className="liquid-glass rounded-[2rem] overflow-hidden aspect-video border border-foreground/5 shadow-2xl">
+                        <div className="rounded-[2rem] overflow-hidden aspect-video border border-foreground/5 shadow-2xl">
                           <video
                             src={active.video}
                             controls

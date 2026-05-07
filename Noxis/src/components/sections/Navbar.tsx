@@ -23,7 +23,7 @@ export function Navbar() {
           <img src={logo} alt="Noxis" className="h-7 md:h-8 w-auto" height={32} />
         </Link>
 
-        <div className="hidden md:flex liquid-glass rounded-full px-1.5 py-1 items-center gap-1 pointer-events-auto">
+        <div className="hidden md:flex rounded-full px-1.5 py-1 items-center gap-1 pointer-events-auto border border-foreground/5 bg-foreground/5 shadow-sm">
           {/* ... existing links ... */}
           {links.map((l) => (
             <Link
@@ -46,7 +46,7 @@ export function Navbar() {
           </button>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("open-planner"))}
-            className="ml-1 inline-flex items-center gap-1 liquid-glass rounded-full px-3.5 py-1.5 text-sm font-medium text-foreground hover:bg-foreground/5 transition"
+            className="ml-1 inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-foreground hover:bg-foreground/5 transition border border-foreground/5 bg-foreground/5"
           >
             {t("nav.quote")}
           </button>
@@ -60,7 +60,7 @@ export function Navbar() {
 
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center text-foreground pointer-events-auto"
+          className="md:hidden rounded-full w-10 h-10 flex items-center justify-center text-foreground pointer-events-auto border border-foreground/10 bg-foreground/5"
           aria-label="Open menu"
         >
           <Menu className="h-4 w-4" />
@@ -68,11 +68,11 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="fixed inset-0 z-[60] md:hidden bg-background/95 backdrop-blur-md flex flex-col">
+        <div className="fixed inset-0 z-[60] md:hidden bg-background flex flex-col">
           <div className="flex justify-end p-6">
             <button
               onClick={() => setOpen(false)}
-              className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center text-foreground"
+              className="rounded-full w-10 h-10 flex items-center justify-center text-foreground border border-foreground/10 bg-foreground/5"
               aria-label="Close menu"
             >
               <X className="h-4 w-4" />
@@ -100,7 +100,7 @@ export function Navbar() {
             </button>
             <button
               onClick={() => setLang(lang === "fr" ? "ar" : "fr")}
-              className="mt-4 liquid-glass rounded-full px-4 py-2 text-sm text-foreground font-body inline-flex items-center gap-2"
+              className="mt-4 rounded-full px-4 py-2 text-sm text-foreground font-body inline-flex items-center gap-2 border border-foreground/5 bg-foreground/5"
             >
               <Globe className="h-4 w-4" />
               {lang === "fr" ? "العربية" : "Français"}

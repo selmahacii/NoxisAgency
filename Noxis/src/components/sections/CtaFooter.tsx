@@ -13,14 +13,7 @@ export function CtaFooter() {
         className="absolute inset-0 w-full h-full object-cover grayscale brightness-[1.1] contrast-[0.9] opacity-25 mix-blend-multiply"
       />
       <div className="absolute inset-0 bg-background/20 z-0" />
-      <div
-        className="absolute top-0 left-0 right-0 pointer-events-none z-10"
-        style={{ height: 200, background: "linear-gradient(to top, transparent, var(--background))" }}
-      />
-      <div
-        className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
-        style={{ height: 200, background: "linear-gradient(to bottom, transparent, var(--background))" }}
-      />
+      {/* Removed fades for clarity */}
       <div className="relative z-20 px-6 lg:px-16 pt-40 pb-12 max-w-6xl mx-auto flex flex-col items-center text-center">
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-foreground leading-[0.85] mb-8 max-w-3xl">
           Construisons ce qui vient ensuite.
@@ -31,7 +24,7 @@ export function CtaFooter() {
         <div className="flex flex-wrap items-center justify-center gap-4 mb-32">
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("open-planner"))}
-            className="liquid-glass-strong rounded-full px-6 py-3 inline-flex items-center gap-2 text-sm font-medium text-foreground"
+            className="bg-primary text-primary-foreground rounded-full px-8 py-3.5 inline-flex items-center gap-2 text-sm font-medium hover:bg-primary/90 transition shadow-lg"
           >
             Réserver un appel découverte
           </button>

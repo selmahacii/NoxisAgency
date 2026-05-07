@@ -54,7 +54,7 @@ export function Hero() {
           initial={{ filter: "blur(10px)", opacity: 0, y: 20 }}
           animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="liquid-glass rounded-full px-1 py-1 inline-flex items-center gap-2 mb-8"
+          className="rounded-full px-1 py-1 inline-flex items-center gap-2 mb-8 border border-foreground/5 bg-foreground/5"
         >
           <span className="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-semibold font-body">
             v2026
@@ -86,7 +86,7 @@ export function Hero() {
         >
           <a
             href="/process"
-            className="liquid-glass-strong rounded-full px-7 py-3 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-all hover:scale-105 active:scale-95"
+            className="bg-primary text-primary-foreground rounded-full px-7 py-3 inline-flex items-center gap-2 text-sm font-medium transition-all hover:scale-105 active:scale-95 shadow-lg"
           >
             {t("hero.cta1")} <ArrowUpRight className="h-4 w-4" />
           </a>
@@ -99,7 +99,7 @@ export function Hero() {
         </motion.div>
 
         <div className="mt-auto pb-16 pt-16 flex flex-col items-center gap-8 w-full">
-          <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-foreground/60 font-body">
+          <div className="rounded-full px-3.5 py-1 text-xs font-medium text-foreground/60 font-body border border-foreground/5 bg-foreground/5">
             {t("hero.partners")}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20">
