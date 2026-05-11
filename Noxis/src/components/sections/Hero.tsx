@@ -1,15 +1,10 @@
 import { motion } from "motion/react";
-import { ArrowUpRight, Play, Shield } from "lucide-react";
+import { ArrowUpRight, Play } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { BlurText } from "@/components/BlurText";
 import heroVideo from "@/assets/IMG_5290.MP4";
 import { useI18n } from "@/lib/i18n";
 
-const partners = [
-  { name: "Fisc Algérie", industry: "Fintech" },
-  { name: "Medicare.dz", industry: "Health" },
-  { name: "Noxis Logistics", industry: "Distribution" }
-];
 
 export function Hero() {
   const { t } = useI18n();
@@ -75,7 +70,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center gap-8 mb-24"
+            className="flex flex-col sm:flex-row items-center gap-8"
           >
             <a
               href="/process"
@@ -94,41 +89,6 @@ export function Hero() {
               </div>
               <span className="tracking-widest uppercase text-[10px] font-bold">{t("hero.cta2")}</span>
             </a>
-          </motion.div>
-
-          {/* Social Proof / Partner Ecosystem */}
-          <motion.div 
-             initial={{ opacity: 0, filter: "blur(10px)" }}
-             animate={{ opacity: 1, filter: "blur(0px)" }}
-             transition={{ duration: 1.5, delay: 2 }}
-             className="w-full pt-12 border-t border-foreground/5"
-          >
-            <div className="flex flex-col items-center gap-10">
-              <div className="inline-flex items-center gap-3 px-4 py-1 rounded-full bg-foreground/5 border border-foreground/5">
-                <Shield className="h-3 w-3 text-primary" />
-                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-foreground/40">
-                  {t("hero.partners")}
-                </span>
-              </div>
-              
-              <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
-                {partners.map((p, i) => (
-                  <motion.div 
-                    key={p.name} 
-                    whileHover={{ y: -5, opacity: 1 }}
-                    className="flex flex-col items-center gap-1.5 opacity-30 transition-all duration-500 hover:opacity-100"
-                  >
-                    <span className="text-2xl md:text-3xl font-heading italic text-foreground tracking-tight">
-                      {p.name}
-                    </span>
-                    <div className="h-[1px] w-8 bg-primary/40" />
-                    <span className="text-[8px] uppercase tracking-[0.2em] font-black text-foreground/40">
-                      {p.industry}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
