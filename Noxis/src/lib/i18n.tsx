@@ -20,7 +20,7 @@ const dictionaries: Record<Lang, Dict> = {
       "Studio technique senior basé à Alger — spécialisé dans les systèmes critiques pour la Fintech, la Santé et la Distribution.",
     "hero.cta1": "Voir notre approche",
     "hero.cta2": "Voir le showreel",
-    "hero.partners": "Expertise prouvée avec",
+   
 
     "portfolio.badge": "Réalisations",
     "portfolio.title": "Projets récents.",
