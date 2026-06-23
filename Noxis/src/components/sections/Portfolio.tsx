@@ -137,6 +137,22 @@ import pAtelierG2 from "@/assets/pAtelierpilates/image copy 2.png";
 import pAtelierG3 from "@/assets/pAtelierpilates/image copy 3.png";
 import pAtelierG4 from "@/assets/pAtelierpilates/image copy 4.png";
 
+import immoAlgeriaImg from "@/assets/ImmoAlgeria/image.png";
+import immoAlgeriaG1 from "@/assets/ImmoAlgeria/image copy.png";
+import immoAlgeriaG2 from "@/assets/ImmoAlgeria/image copy 2.png";
+import immoAlgeriaG3 from "@/assets/ImmoAlgeria/image copy 3.png";
+import immoAlgeriaG4 from "@/assets/ImmoAlgeria/image copy 4.png";
+import immoAlgeriaG5 from "@/assets/ImmoAlgeria/image copy 5.png";
+import immoAlgeriaG6 from "@/assets/ImmoAlgeria/image copy 6.png";
+import immoAlgeriaG7 from "@/assets/ImmoAlgeria/image copy 7.png";
+import immoAlgeriaG8 from "@/assets/ImmoAlgeria/image copy 8.png";
+import immoAlgeriaG9 from "@/assets/ImmoAlgeria/image copy 9.png";
+
+import latelierProImg from "@/assets/l'atelier pro/image.png";
+import latelierProG1 from "@/assets/l'atelier pro/image copy 2.png";
+import latelierProG2 from "@/assets/l'atelier pro/image copy 3.png";
+import latelierProG3 from "@/assets/l'atelier pro/image copy 4.png";
+
 export interface Project {
   id: string;
   title: string;
@@ -158,6 +174,67 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "maison-orelie",
+    title: "Maison Orélie",
+    category: "Luxe & Lifestyle — E-commerce Premium",
+    year: "2026",
+    client: "Maison Orélie Paris",
+    duration: "14 semaines",
+    image: maisonOrelieImg,
+    video: maisonOrelieVideo,
+    gallery: [maisonOrelieImg, maisonOrelieG1, maisonOrelieG2, maisonOrelieG3, maisonOrelieG4, maisonOrelieG5],
+    summary: "Plateforme e-commerce haut de gamme alliant l'élégance de la mode à des performances de vente exceptionnelles.",
+    challenge: "Créer une vitrine digitale qui incarne l'héritage d'une maison de luxe tout en offrant un tunnel de conversion moderne, fluide et redoutablement efficace.",
+    description: "Une architecture e-commerce sur-mesure sublimée par des transitions cinématographiques. L'intégration de paiements sans friction et d'un espace client exclusif renforce l'engagement et décuple les ventes.",
+    services: ["Design Éditorial", "E-commerce Luxe", "Optimisation Conversion"],
+    stack: ["React", "Framer Motion", "Tailwind CSS", "Shopify Plus"],
+    results: [
+      { label: "Ventes Mobiles", value: "+85%" },
+      { label: "Temps Chargement", value: "<1s" },
+      { label: "Panier Moyen", value: "+30%" },
+    ],
+  },
+  {
+    id: "immo-algeria",
+    title: "ImmoAlgeria",
+    category: "PropTech — Portail Immobilier",
+    year: "2026",
+    client: "ImmoAlgeria",
+    duration: "18 semaines",
+    image: immoAlgeriaImg,
+    gallery: [immoAlgeriaImg, immoAlgeriaG1, immoAlgeriaG2, immoAlgeriaG3, immoAlgeriaG4, immoAlgeriaG5, immoAlgeriaG6, immoAlgeriaG7, immoAlgeriaG8, immoAlgeriaG9],
+    summary: "Plateforme d'annonces immobilières nouvelle génération avec recherche géospatiale et filtres avancés.",
+    challenge: "Moderniser la recherche immobilière en Algérie avec une plateforme ultra-rapide, capable de gérer des millions de propriétés et d'offrir une navigation cartographique en temps réel.",
+    description: "Déploiement d'un moteur de recherche immobilier robuste intégrant une cartographie interactive, des visites virtuelles et un tableau de bord complet pour les agences. Une solution taillée pour dominer le marché.",
+    services: ["Architecture SaaS", "Cartographie Interactive", "Design UI/UX", "Portail Agence"],
+    stack: ["Next.js", "PostgreSQL", "Google Maps API", "Tailwind CSS"],
+    results: [
+      { label: "Trafic Actif", value: "500k+" },
+      { label: "Leads/Agence", value: "x3" },
+      { label: "Recherche", value: "<50ms" },
+    ],
+  },
+  {
+    id: "latelier-pro",
+    title: "L'Atelier Pro",
+    category: "B2B — E-commerce & Outillage",
+    year: "2026",
+    client: "L'Atelier Pro B2B",
+    duration: "16 semaines",
+    image: latelierProImg,
+    gallery: [latelierProImg, latelierProG1, latelierProG2, latelierProG3],
+    summary: "Plateforme de vente B2B dédiée aux professionnels, alliant gestion de catalogues complexes et tarification dynamique.",
+    challenge: "Digitaliser l'approvisionnement des entreprises avec une infrastructure e-commerce robuste gérant des stocks volumineux, des prix par paliers et des devis automatisés.",
+    description: "Un hub e-commerce puissant pour les professionnels de l'artisanat et de l'industrie. L'intégration ERP en temps réel et les tunnels de paiement multi-niveaux garantissent une fluidité opérationnelle absolue.",
+    services: ["E-commerce B2B", "Intégration ERP", "Automatisation Devis"],
+    stack: ["React", "Node.js", "PostgreSQL", "Redis"],
+    results: [
+      { label: "Commandes B2B", value: "+120%" },
+      { label: "Automatisation", value: "100%" },
+      { label: "Fidélisation", value: "95%" },
+    ],
+  },
   {
     id: "p-atelier-pilates",
     title: "Atelier Pilates",
